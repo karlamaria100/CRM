@@ -10,6 +10,8 @@ import java.util.ArrayList;
 /**
  * Created by Rares on 4/1/2017.
  */
+
+//muhaha
 public class Controller {
 
     ArrayList<Company> listCompanies = new ArrayList<>();
