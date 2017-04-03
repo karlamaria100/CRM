@@ -9,14 +9,11 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 
-/**
- * Created by rares on 31-Mar-17.
- */
 public class NewClientUI {
 
-    int type;
-    Controller control;
-    MainUI mainUI;
+    private int type;
+    private Controller control;
+    private MainUI mainUI;
 
     NewClientUI(int type, Controller control, MainUI ui) {
 
@@ -111,7 +108,7 @@ public class NewClientUI {
                     control.addCompany(nameCompanyTextField.getText());
                 }
                 else{
-                    control.addCompany(nameCompanyTextField.getText());
+                    control.addCustomer(namePersonTextField.getText(), surnamePersonTextField.getText());
                 }
                 control.refreshClientList();
                 jframe.dispose();

@@ -1,10 +1,12 @@
 package View;
 
+import Model.Client;
 import Model.Company;
 import Model.Product;
 
 import javax.naming.ldap.Control;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -61,7 +63,6 @@ public class MainUI {
         });
         newClient.add(newClientPersonButton);
 
-        JPanel newClientCompany = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JButton newClientCompanyButton = new JButton("Adaugati Persoana Juridica");
         newClientCompanyButton.addActionListener(new ActionListener() {
             @Override
@@ -70,6 +71,24 @@ public class MainUI {
             }
         });
         newClient.add(newClientCompanyButton);
+
+        JButton exportClientsButton = new JButton("Exportati lista de clienti");
+        exportClientsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                control.exportClientList();
+            }
+        });
+        newClient.add(exportClientsButton);
+
+        JButton importClientsButton = new JButton("Importati lista de clienti");
+        importClientsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                control.importClientsList();
+            }
+        });
+        newClient.add(importClientsButton);
 
 
 
@@ -103,10 +122,10 @@ public class MainUI {
     }
 
     public void refreshCL(){
-        ArrayList<Company> listCompanies = control.getListCompanies();
+        ArrayList<Client> listClients = control.getListCompanies();
         clientList.removeAll();
-        for(int i = 0; i < listCompanies.size(); i++){
-            clientList.add(clientEntry(listCompanies.get(i)));
+        for(int i = 0; i < listClients.size(); i++){
+            clientList.add(clientEntry(listClients.get(i)));
         }
         clientList.revalidate();
     }
@@ -120,7 +139,7 @@ public class MainUI {
         productList.revalidate();
     }
 
-    private JPanel clientEntry(Company c){
+    private JPanel clientEntry(Client c){
         JPanel client = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         JLabel clientName = new JLabel(c.getName());
@@ -130,7 +149,7 @@ public class MainUI {
         newFacturaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FacturaView fv = new FacturaView(c);
+                FacturaView fv = new FacturaView(c,control);
             }
         });
         JButton newRaportButton = new JButton("Raport");
@@ -160,6 +179,26 @@ public class MainUI {
         });
         newProduct.add(newProductButton);
 
+        JButton exportProductListButton = new JButton("Exportati lista de produse");
+        exportProductListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                control.exportProductList();
+            }
+        });
+
+        JButton importProductListButton = new JButton("Importati lista de produse");
+        importProductListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                control.importProductList();
+            }
+        });
+
+        newProduct.add(newProductButton);
+        newProduct.add(exportProductListButton);
+        newProduct.add(importProductListButton);
+
 
 
         //PRODUCT LIST
@@ -186,11 +225,14 @@ public class MainUI {
         productList = new JPanel();
         BoxLayout boxlayout = new BoxLayout(productList, BoxLayout.Y_AXIS);
         productList.setLayout(boxlayout);
+
         return productList;
     }
 
     private JPanel productEntry(Product p){
-        JPanel product = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel product = new JPanel();
+        product.setBackground(Color.pink);
+        product.setBorder(BorderFactory.createLineBorder(Color.black,4,true));
 
         JLabel productNameLabel = new JLabel("Produs:");
         JLabel productName = new JLabel(p.getName());

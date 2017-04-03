@@ -1,6 +1,8 @@
 package Model;
 
-public class Customer extends Client{
+import java.io.Serializable;
+
+public class Customer extends Client implements Serializable{
 
     private String name;
     private String surname;
@@ -8,21 +10,11 @@ public class Customer extends Client{
     public Customer(String name, String surname) {
         this.name = name;
         this.surname = surname;
+        setId(nextId.incrementAndGet());
     }
 
     public String getName() {
-        return name;
+        return name + " " + surname;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 }

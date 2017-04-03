@@ -1,11 +1,14 @@
 package View;
 
+import Model.Client;
 import Model.Company;
 import Model.Factura;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,12 +18,14 @@ import java.awt.event.ActionListener;
  */
 public class FacturaView {
 
-    Company c;
+    Client c;
     private JFrame jframe;
+    Controller control;
 
-    FacturaView(Company c){
+    FacturaView(Client c, Controller control){
         this.c = c;
         startWindow();
+        this.control = control;
     }
 
     private void startWindow() {
@@ -73,9 +78,10 @@ public class FacturaView {
         return form;
     }
 
+    JPanel productList;
     private JPanel productList(){
 
-        JPanel productList = new JPanel();
+        productList = new JPanel();
         BoxLayout boxlayout = new BoxLayout(productList, BoxLayout.Y_AXIS);
         productList.setLayout(boxlayout);
 
@@ -89,19 +95,68 @@ public class FacturaView {
 
         JLabel productNameLabel = new JLabel("Nume Produs:");
         JTextField productNameTextField = new JTextField();
+
+        productNameTextField.getDocument().addDocumentListener(new DocumentListener() {
+            int characterCount = 0;
+            boolean done = false;
+
+            public void behaviour(){
+                if(characterCount == 0){
+                    //System.out.println("Gol");
+                    productList.remove(productList.getComponents()[productList.getComponents().length - 1]);
+                    productList.revalidate();
+                    done = false;
+                }
+                if(characterCount != 0 && done == false){
+                    //System.out.println(characterCount);
+                    done = true;
+                    productList.add(productEntry());
+                    productList.revalidate();
+
+                }
+                else {
+                    //System.out.println(characterCount);
+                }
+            }
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                characterCount++;
+                behaviour();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                characterCount--;
+                behaviour();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                System.out.println("Change");
+            }
+        });
         productNameTextField.setPreferredSize(new Dimension(150,24));
 
         JLabel productQuantity = new JLabel("Quantity");
         JTextField productQuantityTextField = new JTextField();
         productQuantityTextField.setPreferredSize(new Dimension(50,24));
 
-        JLabel productFinalPrice = new JLabel ("12.00 RON");
+        JLabel productFinalPrice = new JLabel ("0.00 RON");
+
+        JButton addButton = new JButton("Adauga");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                control.queryProduct(productNameTextField.getText());
+            }
+        });
 
         product.add(productNameLabel);
         product.add(productNameTextField);
         product.add(productQuantity);
         product.add(productQuantityTextField);
         product.add(productFinalPrice);
+        product.add(addButton);
 
         return product;
     }
