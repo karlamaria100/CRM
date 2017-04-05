@@ -30,7 +30,7 @@ public class FacturaView {
 
     private void startWindow() {
         jframe = new JFrame("Factura Noua");
-        jframe.setPreferredSize(new Dimension(500, 300));
+        jframe.setPreferredSize(new Dimension(600, 300));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
 
@@ -147,7 +147,24 @@ public class FacturaView {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                control.queryProduct(productNameTextField.getText());
+                if(productNameTextField.getText().equals("")){
+                    JOptionPane.showMessageDialog(jframe,
+                            "Campul Numele Produsului invalid",
+                            "Eroare validare",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                if(productQuantityTextField.getText().equals("")){
+                    JOptionPane.showMessageDialog(jframe,
+                            "Campul Cantitate invalid",
+                            "Eroare validare",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                if(control.queryProduct(productNameTextField.getText()) == false){
+                    JOptionPane.showMessageDialog(jframe,
+                            "Produsul nu exista in ofeta! \n Incercati altceva.",
+                            "Eroare validare",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 

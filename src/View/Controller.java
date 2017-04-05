@@ -115,7 +115,7 @@ public class Controller {
         refreshClientList();
     }
 
-    public void queryProduct(String nameProduct){
+    public boolean queryProduct(String nameProduct){
         System.out.print(nameProduct);
         for(int i = 0; i < listProducts.size(); i++) {
             System.out.print(listProducts.get(i).getName() + " ");
@@ -128,9 +128,7 @@ public class Controller {
                 gasit = true;
             }
         }
-        if(gasit == false){
-
-        }
+        return gasit;
     }
 
 }
