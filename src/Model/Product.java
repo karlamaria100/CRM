@@ -17,11 +17,6 @@ public class Product implements Serializable{
         this.price = price;
     }
 
-    public Product(String name, double price) {
-        this.name = name;
-        this.price = price;
-    }
-
     public Product(){
         this.name = "Mere";
         this.price = 12.00;

@@ -7,7 +7,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Client implements Serializable {
 
-    private ArrayList<Factura> facturaList = new ArrayList<>();
     static AtomicInteger nextId = new AtomicInteger();
     private int id;
 
@@ -21,13 +20,4 @@ public class Client implements Serializable {
     protected void setId(int id){
         this.id = id;
     }
-
-    public ArrayList<Factura> getFacturaList() {
-        return facturaList;
-    }
-
-    public void addFactura(Factura f){
-        facturaList.add(f);
-    }
-
 }

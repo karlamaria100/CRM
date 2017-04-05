@@ -1,9 +1,6 @@
 package View;
 
 import Model.Client;
-import Model.Company;
-import Model.Factura;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -30,7 +27,7 @@ public class FacturaView {
 
     private void startWindow() {
         jframe = new JFrame("Factura Noua");
-        jframe.setPreferredSize(new Dimension(600, 300));
+        jframe.setPreferredSize(new Dimension(630, 300));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
 
@@ -92,6 +89,8 @@ public class FacturaView {
 
     private JPanel productEntry(){
         JPanel product = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        //JPanel product = new JPanel(new GridBagLayout());
+        JButton addButton = null;
 
         JLabel productNameLabel = new JLabel("Nume Produs:");
         JTextField productNameTextField = new JTextField();
@@ -143,27 +142,39 @@ public class FacturaView {
 
         JLabel productFinalPrice = new JLabel ("0.00 RON");
 
-        JButton addButton = new JButton("Adauga");
+        addButton = new JButton("Adauga");
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                boolean valid = true;
                 if(productNameTextField.getText().equals("")){
+                    valid = false;
                     JOptionPane.showMessageDialog(jframe,
                             "Campul Numele Produsului invalid",
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
                 }
                 if(productQuantityTextField.getText().equals("")){
+                    valid = false;
                     JOptionPane.showMessageDialog(jframe,
                             "Campul Cantitate invalid",
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
                 }
-                if(control.queryProduct(productNameTextField.getText()) == false){
+                if(control.queryProduct(productNameTextField.getText()) != null){
+                    valid = false;
+                    System.out.println(control.queryProduct(productNameTextField.getText()));
                     JOptionPane.showMessageDialog(jframe,
                             "Produsul nu exista in ofeta! \n Incercati altceva.",
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
+                }
+                if(valid) {
+                    JButton removeButton = new JButton("Sterge");
+                    product.add(removeButton);
+                    productNameTextField.setEditable(false);
+                    productQuantityTextField.setEditable(false);
+                    product.revalidate();
                 }
             }
         });

@@ -23,6 +23,8 @@ Cautare dupa diversi parametri (criterii complexe de cautare)
 //http://stackoverflow.com/questions/12462964/mvc-do-i-need-to-use-controller-in-the-view
 
 
+    //DUPA CE IMPORT LISTA DE CLIENTI, DACA ADAUG UNUL NOU, IA DE LA CAPAT SERIALIZAREA
+
 public class Main {
 
 

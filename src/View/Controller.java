@@ -115,17 +115,17 @@ public class Controller {
         refreshClientList();
     }
 
-    public boolean queryProduct(String nameProduct){
-        System.out.print(nameProduct);
+    public Product queryProduct(String nameProduct){
+        /*System.out.print(nameProduct);
         for(int i = 0; i < listProducts.size(); i++) {
             System.out.print(listProducts.get(i).getName() + " ");
         }
-
-        boolean gasit = false;
+        */
+        Product gasit = null;
         for(int i = 0; i < listProducts.size(); i++){
             if(listProducts.get(i).getName().equals(nameProduct)){
                 System.out.print("true");
-                gasit = true;
+                gasit = listProducts.get(i);
             }
         }
         return gasit;

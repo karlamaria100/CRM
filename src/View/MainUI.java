@@ -140,7 +140,8 @@ public class MainUI {
     }
 
     private JPanel clientEntry(Client c){
-        JPanel client = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        //JPanel client = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel client = new JPanel(new GridBagLayout());
 
         JLabel clientName = new JLabel(c.getName());
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
@@ -154,10 +155,13 @@ public class MainUI {
         });
         JButton newRaportButton = new JButton("Raport");
 
-        client.add(clientName);
-        client.add(clientID);
-        client.add(newFacturaButton);
-        client.add(newRaportButton);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.weightx = 0.1;
+        client.add(clientID,gbc);
+        gbc.weightx = 0.3;
+        client.add(clientName,gbc);
+        client.add(newFacturaButton,gbc);
+        client.add(newRaportButton,gbc);
 
         return client;
     }
