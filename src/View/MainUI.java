@@ -20,6 +20,7 @@ public class MainUI {
 
     Controller control;
     MainUI acesta = this;
+    JFrame jframe;
 
 
     public MainUI(Controller control){
@@ -31,7 +32,7 @@ public class MainUI {
 
     private void startWindow(){
         //BASE WINDOW FOR LOGIN
-        JFrame jframe = new JFrame("CRM");
+        jframe = new JFrame("CRM");
         jframe.setPreferredSize(new Dimension(800,500));
         jframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -146,20 +147,33 @@ public class MainUI {
         JLabel clientName = new JLabel(c.getName());
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
 
+        JLabel clientNumberFacturi = new JLabel(String.valueOf(c.getNumberFacturi()));
+
+
         JButton newFacturaButton = new JButton("Factura Noua");
         newFacturaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 FacturaView fv = new FacturaView(c,control);
+                jframe.revalidate();
             }
         });
         JButton newRaportButton = new JButton("Raport");
+        newRaportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                RaportUI r = new RaportUI(c);
+            }
+        });
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.weightx = 0.1;
         client.add(clientID,gbc);
         gbc.weightx = 0.3;
         client.add(clientName,gbc);
+        gbc.weightx = 0.1;
+        client.add(clientNumberFacturi,gbc);
+        gbc.weightx = 0.3;
         client.add(newFacturaButton,gbc);
         client.add(newRaportButton,gbc);
 

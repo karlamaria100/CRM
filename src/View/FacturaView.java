@@ -1,6 +1,8 @@
 package View;
 
 import Model.Client;
+import Model.Factura;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -18,6 +20,11 @@ public class FacturaView {
     Client c;
     private JFrame jframe;
     Controller control;
+    JLabel totalFactura;
+    int numberProducts = 0;
+    JLabel nrProductsLabel;
+    JPanel productList;
+
 
     FacturaView(Client c, Controller control){
         this.c = c;
@@ -65,8 +72,37 @@ public class FacturaView {
         JPanel operationButtons = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         operationButtons.setBorder(new EmptyBorder(5, 0, 20, 20));
         JButton saveButton = new JButton("Save");
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Factura noua = new Factura();
+                for (Component component : productList.getComponents()) {
+                    if(component instanceof JPanel){
+
+                        String nameProductLocal = ((JTextField)((JPanel) component).getComponent(1)).getText();
+                        String quantityProductLocal = ((JTextField)((JPanel) component).getComponent(3)).getText();
+                        if(!nameProductLocal.isEmpty()) {
+                            System.out.println(quantityProductLocal);
+                            double q = Double.parseDouble(quantityProductLocal);
+                            JLabel p = (JLabel) ((JPanel) component).getComponent(4);
+                            double priceProductLocal = Double.parseDouble(p.getText());
+                            priceProductLocal = priceProductLocal / q;
+                            noua.add(nameProductLocal, q, priceProductLocal);
+                            c.addFactura(noua);
+                            jframe.dispose();
+                        }
+                    }
+                }
+            }
+        });
         JButton clearButton = new JButton("Clear");
 
+        totalFactura = new JLabel("0.00");
+        JLabel RON = new JLabel("RON");
+        nrProductsLabel = new JLabel(String.valueOf(numberProducts));
+        operationButtons.add(nrProductsLabel);
+        operationButtons.add(totalFactura);
+        operationButtons.add(RON);
         operationButtons.add(clearButton);
         operationButtons.add(saveButton);
 
@@ -75,7 +111,7 @@ public class FacturaView {
         return form;
     }
 
-    JPanel productList;
+
     private JPanel productList(){
 
         productList = new JPanel();
@@ -110,6 +146,7 @@ public class FacturaView {
                     //System.out.println(characterCount);
                     done = true;
                     productList.add(productEntry());
+                    numberProducts++;
                     productList.revalidate();
 
                 }
@@ -140,7 +177,8 @@ public class FacturaView {
         JTextField productQuantityTextField = new JTextField();
         productQuantityTextField.setPreferredSize(new Dimension(50,24));
 
-        JLabel productFinalPrice = new JLabel ("0.00 RON");
+        JLabel productFinalPrice = new JLabel ("0.00");
+        JLabel RON = new JLabel("RON");
 
         addButton = new JButton("Adauga");
         addButton.addActionListener(new ActionListener() {
@@ -161,19 +199,33 @@ public class FacturaView {
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
                 }
-                if(control.queryProduct(productNameTextField.getText()) != null){
+                if(control.getProduct(productNameTextField.getText()) == null) {
                     valid = false;
-                    System.out.println(control.queryProduct(productNameTextField.getText()));
+                    //System.out.println(control.getProduct(productNameTextField.getText()).getName());
                     JOptionPane.showMessageDialog(jframe,
                             "Produsul nu exista in ofeta! \n Incercati altceva.",
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    double cantitateStoc = control.enoughProduct(productNameTextField.getText(), productQuantityTextField.getText());
+                    if(cantitateStoc > 0){
+                        valid = false;
+                        JOptionPane.showMessageDialog(jframe,
+                                "Nu avem atata produs. Puteti opta pentru " + String.valueOf(cantitateStoc) +" produse maximum!",
+                                "Eroare validare",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
                 }
                 if(valid) {
                     JButton removeButton = new JButton("Sterge");
                     product.add(removeButton);
                     productNameTextField.setEditable(false);
                     productQuantityTextField.setEditable(false);
+                    totalFactura.setText(String.valueOf(Double.parseDouble(totalFactura.getText()) + Double.parseDouble(productQuantityTextField.getText()) * control.getProduct(productNameTextField.getText()).getPrice()));
+                    int p = Integer.parseInt(nrProductsLabel.getText());
+                    p++;
+                    nrProductsLabel.setText(String.valueOf(p));
                     product.revalidate();
                 }
             }
@@ -184,6 +236,7 @@ public class FacturaView {
         product.add(productQuantity);
         product.add(productQuantityTextField);
         product.add(productFinalPrice);
+        product.add(RON);
         product.add(addButton);
 
         return product;

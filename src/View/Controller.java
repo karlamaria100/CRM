@@ -116,11 +116,11 @@ public class Controller {
     }
 
     public Product queryProduct(String nameProduct){
-        /*System.out.print(nameProduct);
+        System.out.print(nameProduct);
         for(int i = 0; i < listProducts.size(); i++) {
             System.out.print(listProducts.get(i).getName() + " ");
         }
-        */
+
         Product gasit = null;
         for(int i = 0; i < listProducts.size(); i++){
             if(listProducts.get(i).getName().equals(nameProduct)){
@@ -128,7 +128,32 @@ public class Controller {
                 gasit = listProducts.get(i);
             }
         }
+        System.out.print(gasit);
         return gasit;
+    }
+
+    public double enoughProduct(String nameProduct, String quantityProduct){
+        for(int i = 0; i < listProducts.size(); i++){
+            if(listProducts.get(i).getName().equals(nameProduct)){
+                if(listProducts.get(i).getQuantity() < Double.parseDouble(quantityProduct)){
+                    return listProducts.get(i).getQuantity();
+                }
+            }
+        }
+        return -1.0;
+    }
+
+    public Product getProduct(int index){
+        return listProducts.get(index);
+    }
+
+    public Product getProduct(String nameProduct){
+        for(int i = 0; i < listProducts.size(); i++) {
+            if(listProducts.get(i).getName().equals(nameProduct)){
+                return listProducts.get(i);
+            }
+        }
+        return null;
     }
 
 }
