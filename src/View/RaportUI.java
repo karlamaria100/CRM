@@ -1,16 +1,18 @@
 package View;
 
 import Model.Client;
+import Model.Factura;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
-/**
- * Created by rares on 06-Apr-17.
- */
+
 public class RaportUI {
     private JFrame jframe;
     private Client client;
+    private JPanel facturalist;
 
     RaportUI(Client c){
         this.client = c;
@@ -22,9 +24,87 @@ public class RaportUI {
         jframe.setPreferredSize(new Dimension(400, 300));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-        jframe.add(new JLabel(client.getName()));
+        jframe.add(raportView());
         jframe.pack();
         jframe.setLocationRelativeTo(null);
         jframe.setVisible(true);
+    }
+
+    private JPanel raportView(){
+        JPanel form = new JPanel(new BorderLayout());
+
+        JPanel clientNamePane = new JPanel();
+        clientNamePane.setLayout(new FlowLayout(FlowLayout.LEFT));
+        clientNamePane.setBorder(new EmptyBorder(20, 20, 5, 0));
+
+        JLabel nameClient = new JLabel("Numele Clientului:" + client.getName());
+
+
+        clientNamePane.add(nameClient);
+
+        form.add(clientNamePane,BorderLayout.NORTH);
+
+
+        JScrollPane clientScrollList = new JScrollPane(facturaList());
+        clientScrollList.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        clientScrollList.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        clientScrollList.setViewportBorder(new LineBorder(Color.BLACK));
+
+        form.add(clientScrollList,BorderLayout.CENTER);
+
+        return form;
+    }
+
+    private JPanel facturaList(){
+
+        facturalist = new JPanel();
+        BoxLayout boxlayout = new BoxLayout(facturalist, BoxLayout.Y_AXIS);
+        facturalist.setLayout(boxlayout);
+        for(int i = 0; i < client.getNumberFacturi(); i++){
+            facturalist.add(facturaEntry(client.getListFacturi().get(i)));
+        }
+
+        return facturalist;
+
+    }
+
+    private JPanel facturaEntry(Factura factura){
+        JPanel facturaPane = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 0.2;
+
+        JLabel facutraLabel = new JLabel("Factura nr. " + factura.getID());
+        facturaPane.add(facutraLabel,gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 0.3;
+        for(int i = 0 ; i < factura.getNumberProducts(); i++){
+            JLabel nameProduct = new JLabel(factura.getListaProduse().get(i).getName());
+            JLabel quantityProduct = new JLabel(String.valueOf(factura.getListaProduse().get(i).getQuantity()));
+            JLabel priceProduct = new JLabel(String.valueOf(factura.getListaProduse().get(i).getPrice()));
+            JLabel priceProductTotal = new JLabel(String.valueOf(factura.getListaProduse().get(i).getQuantity() * factura.getListaProduse().get(i).getPrice()));
+
+            facturaPane.add(nameProduct,gbc);
+            gbc.gridx++;
+            gbc.weightx = 0.2;
+            facturaPane.add(quantityProduct,gbc);
+            gbc.gridx++;
+            gbc.weightx = 0.2;
+            facturaPane.add(priceProduct,gbc);
+            gbc.gridx++;
+            gbc.weightx = 0.2;
+            facturaPane.add(priceProductTotal,gbc);
+            gbc.gridx = 0;
+            gbc.gridy++;
+
+        }
+
+
+
+        return facturaPane;
+
     }
 }

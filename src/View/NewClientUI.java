@@ -32,7 +32,6 @@ public class NewClientUI {
         jframe.setPreferredSize(new Dimension(400, 300));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-
         jframe.add(clientForm());
         jframe.pack();
         jframe.setLocationRelativeTo(null);

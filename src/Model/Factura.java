@@ -2,17 +2,22 @@ package Model;
 
 import oracle.jrockit.jfr.StringConstantPool;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by rares on 06-Apr-17.
  */
-public class Factura {
+public class Factura implements Serializable{
 
+    private int id = 0; //TODO Implement ID Factura
+
+    /*
     public class ProductFactura{
         private String nameProduct;
         private String quantityProduct;
         private double price;
+
 
         ProductFactura(String nameProduct, String quantityProduct, double price){
             this.nameProduct = nameProduct;
@@ -21,6 +26,8 @@ public class Factura {
         }
 
     }
+       */
+
 
     ArrayList<Product> listaProduse = new ArrayList<Product>();
 
@@ -43,5 +50,9 @@ public class Factura {
         return "Factura{" +
                 "listaProduse=" + listaProduse +
                 '}';
+    }
+
+    public int getID(){
+        return id;
     }
 }

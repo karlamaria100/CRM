@@ -82,17 +82,19 @@ public class FacturaView {
                         String nameProductLocal = ((JTextField)((JPanel) component).getComponent(1)).getText();
                         String quantityProductLocal = ((JTextField)((JPanel) component).getComponent(3)).getText();
                         if(!nameProductLocal.isEmpty()) {
-                            System.out.println(quantityProductLocal);
+                            //System.out.println(quantityProductLocal);
                             double q = Double.parseDouble(quantityProductLocal);
                             JLabel p = (JLabel) ((JPanel) component).getComponent(4);
                             double priceProductLocal = Double.parseDouble(p.getText());
                             priceProductLocal = priceProductLocal / q;
                             noua.add(nameProductLocal, q, priceProductLocal);
-                            c.addFactura(noua);
-                            jframe.dispose();
+
                         }
                     }
                 }
+                c.addFactura(noua);
+                control.refreshClientList();
+                jframe.dispose();
             }
         });
         JButton clearButton = new JButton("Clear");
@@ -226,7 +228,10 @@ public class FacturaView {
                     int p = Integer.parseInt(nrProductsLabel.getText());
                     p++;
                     nrProductsLabel.setText(String.valueOf(p));
+                    productFinalPrice.setText(String.valueOf(control.getProduct(productNameTextField.getText()).getPrice() * Double.parseDouble(productQuantityTextField.getText())));
+
                     product.revalidate();
+
                 }
             }
         });
