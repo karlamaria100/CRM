@@ -1,58 +1,47 @@
 package Model;
 
-import Model.Company;
+import oracle.jrockit.jfr.StringConstantPool;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created by Rares on 4/1/2017.
+ * Created by rares on 06-Apr-17.
  */
-public class Factura implements Serializable{
+public class Factura {
 
-    Company c;
-    ArrayList<ProductFactura> products = new ArrayList<>();
-    int ID;
+    public class ProductFactura{
+        private String nameProduct;
+        private String quantityProduct;
+        private double price;
 
-    Factura(Company c){
-
-        this.c = c;
+        ProductFactura(String nameProduct, String quantityProduct, double price){
+            this.nameProduct = nameProduct;
+            this.quantityProduct = quantityProduct;
+            this.price = price;
+        }
 
     }
 
-    public double getTotal(){
-        double total = 0;
-        for(int i = 0; i < products.size(); i++){
-            total = total + products.get(i).getProduct().getPrice();
-        }
-        return total;
+    ArrayList<Product> listaProduse = new ArrayList<Product>();
+
+    public ArrayList<Product> getListaProduse() {
+        return listaProduse;
     }
 
-    class ProductFactura{
-        Product product = new Product();
-        double quantity;
-
-        ProductFactura(Product p, double quantity){
-            this.product = p;
-            this.quantity = quantity;
-        }
-
-        public Product getProduct() {
-            return product;
-        }
-
-        public void setProduct(Product product) {
-            this.product = product;
-        }
-
-        public double getQuantity() {
-            return quantity;
-        }
-
-        public void setQuantity(int quantity) {
-            this.quantity = quantity;
-        }
+    public int getNumberProducts(){
+        return listaProduse.size();
     }
 
+    public void add(String nameProduct, double quantityProduct, double priceProduct){
+        listaProduse.add(new Product(nameProduct, quantityProduct, priceProduct));
+        System.out.println(toString());
 
+    }
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "listaProduse=" + listaProduse +
+                '}';
+    }
 }
