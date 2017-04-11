@@ -1,29 +1,30 @@
 package View;
 
 import Model.Client;
-import Model.Company;
 import Model.Product;
+import Model.ProductTable;
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 
-import javax.naming.ldap.Control;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-/**
- * Created by rares on 31-Mar-17.
- */
 public class MainUI {
 
-    Controller control;
-    MainUI acesta = this;
-    JFrame jframe;
+    private Controller control;
+    private MainUI acesta = this;
+    private JFrame jframe;
+    private JPanel clientList;
+    private JPanel productList;
+    JTable table;
 
 
-    public MainUI(Controller control){
+    MainUI(Controller control){
 
         this.control = control;
         startWindow();
@@ -35,8 +36,7 @@ public class MainUI {
         jframe = new JFrame("CRM");
         jframe.setPreferredSize(new Dimension(800,500));
         jframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        //Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        //jframe.setLocation(dim.width/2-jframe.getSize().width/2, dim.height/2-jframe.getSize().height/2);
+        jframe.setMinimumSize(new Dimension(800, 350));
 
         JTabbedPane jtp = new JTabbedPane();
         jtp.addTab("Clienti", clientsPane());
@@ -54,8 +54,9 @@ public class MainUI {
 
         //ADD CLIENT
 
-        JPanel newClient = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel newClient = new JPanel();
         JButton newClientPersonButton = new JButton("Adaugati Persoana Fizica");
+        newClientPersonButton.setEnabled(false);
         newClientPersonButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -65,6 +66,7 @@ public class MainUI {
         newClient.add(newClientPersonButton);
 
         JButton newClientCompanyButton = new JButton("Adaugati Persoana Juridica");
+        newClientCompanyButton.setEnabled(false);
         newClientCompanyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,6 +76,7 @@ public class MainUI {
         newClient.add(newClientCompanyButton);
 
         JButton exportClientsButton = new JButton("Exportati lista de clienti");
+        exportClientsButton.setEnabled(false);
         exportClientsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,6 +90,10 @@ public class MainUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 control.importClientsList();
+                newClientCompanyButton.setEnabled(true);
+                newClientPersonButton.setEnabled(true);
+                exportClientsButton.setEnabled(true);
+                importClientsButton.setEnabled(false);
             }
         });
         newClient.add(importClientsButton);
@@ -111,14 +118,13 @@ public class MainUI {
 
     }
 
-    JPanel clientList;
-    JPanel productList;
-
     private JPanel clientList(){
 
         clientList = new JPanel();
+
         BoxLayout boxlayout = new BoxLayout(clientList, BoxLayout.Y_AXIS);
         clientList.setLayout(boxlayout);
+
         return clientList;
     }
 
@@ -132,23 +138,19 @@ public class MainUI {
     }
 
     public void refreshPL(){
-        ArrayList<Product> listProducts = control.getListProducts();
-        productList.removeAll();
-        for(int i = 0; i < listProducts.size(); i++){
-            productList.add(productEntry(listProducts.get(i)));
-        }
-        productList.revalidate();
+
+        table.repaint();
+       // productList();
+
     }
 
     private JPanel clientEntry(Client c){
-        //JPanel client = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel client = new JPanel(new GridBagLayout());
 
         JLabel clientName = new JLabel(c.getName());
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
 
         JLabel clientNumberFacturi = new JLabel(String.valueOf(c.getNumberFacturi()));
-
 
         JButton newFacturaButton = new JButton("Factura Noua");
         newFacturaButton.addActionListener(new ActionListener() {
@@ -184,7 +186,6 @@ public class MainUI {
 
         JPanel panel = new JPanel(new BorderLayout());
 
-
         //ADD PRODUCT
 
         JPanel newProduct = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -217,58 +218,57 @@ public class MainUI {
         newProduct.add(exportProductListButton);
         newProduct.add(importProductListButton);
 
-
-
         //PRODUCT LIST
 
-        JScrollPane productScrollList = new JScrollPane(productList());
-        productScrollList.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        productScrollList.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        productScrollList.setViewportBorder(new LineBorder(Color.BLACK));
-
-
-
-
+        table = new JTable(control.getProductTable());
+        table.setFillsViewportHeight(true);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         //PUT EVERYTHING TOGETHER
 
         panel.add(newProduct,BorderLayout.PAGE_START);
-        panel.add(productScrollList,BorderLayout.CENTER);
+        panel.add(testTable().getTableHeader(),BorderLayout.PAGE_START);
+        panel.add(testTable(),BorderLayout.CENTER);
 
         return panel;
     }
 
-    private JPanel productList(){
+    private JTable testTable(){
+        String[] columnNames = {"First Name",
+                "Last Name",
+                "Sport",
+                "# of Years",
+                "Vegetarian"};
+
+        Object[][] data = {
+                {"Kathy", "Smith",
+                        "Snowboarding", new Integer(5), new Boolean(false)},
+                {"John", "Doe",
+                        "Rowing", new Integer(3), new Boolean(true)},
+                {"Sue", "Black",
+                        "Knitting", new Integer(2), new Boolean(false)},
+                {"Jane", "White",
+                        "Speed reading", new Integer(20), new Boolean(true)},
+                {"Joe", "Brown",
+                        "Pool", new Integer(10), new Boolean(false)}
+        };
+
+        JTable table = new JTable(data, columnNames);
+        return table;
+    }
+    /*
+    public JPanel productList(){
 
         productList = new JPanel();
-        BoxLayout boxlayout = new BoxLayout(productList, BoxLayout.Y_AXIS);
-        productList.setLayout(boxlayout);
+
+        table = new JTable(control.getProductTable());
+        table.setFillsViewportHeight(true);
+
+        productList.add(new JScrollPane(table));
+        productList.setLayout(new GridLayout(1,1));
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         return productList;
     }
-
-    private JPanel productEntry(Product p){
-        JPanel product = new JPanel();
-        product.setBackground(Color.pink);
-        product.setBorder(BorderFactory.createLineBorder(Color.black,4,true));
-
-        JLabel productNameLabel = new JLabel("Produs:");
-        JLabel productName = new JLabel(p.getName());
-
-        JLabel productQuantity = new JLabel("Stoc:");
-        JLabel productStocs = new JLabel(String.valueOf(p.getQuantity()));
-
-        JLabel productPrice = new JLabel("Pret:");
-        JLabel productFinalPrice = new JLabel (String.valueOf(p.getPrice()));
-
-        product.add(productNameLabel);
-        product.add(productName);
-        product.add(productQuantity);
-        product.add(productStocs);
-        product.add(productPrice);
-        product.add(productFinalPrice);
-
-        return product;
-    }
-
+    */
 }

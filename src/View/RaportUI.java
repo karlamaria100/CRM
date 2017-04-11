@@ -101,6 +101,13 @@ public class RaportUI {
             gbc.gridy++;
 
         }
+        gbc.gridx = 3;
+        JLabel totalFactura = new JLabel(String.valueOf(factura.getTotalFactura()));
+        facturaPane.add(totalFactura,gbc);
+
+        gbc.gridx = 2;
+        JLabel totalText = new JLabel("Total = ");
+        facturaPane.add(totalText,gbc);
 
 
 

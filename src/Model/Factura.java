@@ -55,4 +55,12 @@ public class Factura implements Serializable{
     public int getID(){
         return id;
     }
+
+    public double getTotalFactura(){
+        double total = 0;
+        for(int i = 0; i<listaProduse.size();i++){
+            total = total + (listaProduse.get(i).getPrice() * listaProduse.get(i).getQuantity());
+        }
+        return total;
+    }
 }

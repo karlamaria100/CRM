@@ -1,9 +1,6 @@
 package View;
 
-import Model.Client;
-import Model.Company;
-import Model.Customer;
-import Model.Product;
+import Model.*;
 import View.MainUI;
 import sun.applet.Main;
 
@@ -15,11 +12,16 @@ public class Controller {
     private ArrayList<Client> listClients = new ArrayList<>();
     private ArrayList<Product> listProducts = new ArrayList<>();
     private MainUI userInterface = new MainUI(this);
+    private ProductTable productTable = new ProductTable();
 
     public void addCompany(String nameCompany){
 
         Company c = new Company(nameCompany);
         listClients.add(c);
+    }
+
+    public ProductTable getProductTable() {
+        return productTable;
     }
 
     public void addCustomer(String nameCustomer, String surnameCustomer){
@@ -30,6 +32,8 @@ public class Controller {
     public void addProduct(String nameProduct, String quantityProduct, String priceProduct){
         Product p = new Product(nameProduct, Double.parseDouble(quantityProduct), Double.parseDouble(priceProduct));
         listProducts.add(p);
+        productTable.updateTable(listProducts);
+        //userInterface.productList();
     }
 
     public void refreshClientList(){
@@ -92,6 +96,7 @@ public class Controller {
         }catch(IOException i) {
 
         }
+
     }
 
     public void importClientsList(){

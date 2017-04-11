@@ -34,4 +34,8 @@ public class Client implements Serializable {
     public void addFactura(Factura factura){
         listFacturi.add(factura);
     }
+
+    public void incrementID(){
+        id = nextId.incrementAndGet();
+    }
 }
