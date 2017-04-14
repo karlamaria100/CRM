@@ -12,23 +12,6 @@ public class Factura implements Serializable{
 
     private int id = 0; //TODO Implement ID Factura
 
-    /*
-    public class ProductFactura{
-        private String nameProduct;
-        private String quantityProduct;
-        private double price;
-
-
-        ProductFactura(String nameProduct, String quantityProduct, double price){
-            this.nameProduct = nameProduct;
-            this.quantityProduct = quantityProduct;
-            this.price = price;
-        }
-
-    }
-       */
-
-
     ArrayList<Product> listaProduse = new ArrayList<Product>();
 
     public ArrayList<Product> getListaProduse() {

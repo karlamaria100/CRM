@@ -102,7 +102,6 @@ public class ProductUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 control.addProduct(nameProductTextField.getText(), productQuantityTextField.getText(), productPriceTextField.getText());
-                //control.refreshProductList();
                 jframe.dispose();
             }
         });

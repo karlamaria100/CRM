@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public class Product implements Serializable{
 
+    //PRODUCT ID CU GRIJA LA FAPTUL CA FACTURA GENEREAZA UN OBIECT NOU.
+
     String name;
     double quantity;
     double price;
@@ -15,11 +17,6 @@ public class Product implements Serializable{
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-    }
-
-    public Product(){
-        this.name = "Mere";
-        this.price = 12.00;
     }
 
     public String getName() {

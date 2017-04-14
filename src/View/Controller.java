@@ -12,17 +12,6 @@ public class Controller {
     private ArrayList<Client> listClients = new ArrayList<>();
     private ArrayList<Product> listProducts = new ArrayList<>();
     private MainUI userInterface = new MainUI(this);
-    private ProductTable productTable = new ProductTable();
-
-    public void addCompany(String nameCompany){
-
-        Company c = new Company(nameCompany);
-        listClients.add(c);
-    }
-
-    public ProductTable getProductTable() {
-        return productTable;
-    }
 
     public void addCustomer(String nameCustomer, String surnameCustomer){
         Customer c = new Customer(nameCustomer,surnameCustomer);
@@ -32,16 +21,17 @@ public class Controller {
     public void addProduct(String nameProduct, String quantityProduct, String priceProduct){
         Product p = new Product(nameProduct, Double.parseDouble(quantityProduct), Double.parseDouble(priceProduct));
         listProducts.add(p);
-        productTable.updateTable(listProducts);
-        //userInterface.productList();
+        userInterface.productEntry(p);
+    }
+
+    public void addCompany(String nameCompany){
+
+        Company c = new Company(nameCompany);
+        listClients.add(c);
     }
 
     public void refreshClientList(){
         userInterface.refreshCL();
-    }
-
-    public void refreshProductList(){
-        userInterface.refreshPL();
     }
 
     public ArrayList<Client> getListCompanies(){
@@ -67,8 +57,9 @@ public class Controller {
         }
         for(int i = 0; i < arr.size(); i++){
             listProducts.add(arr.get(i));
+            userInterface.productEntry(arr.get(i));
         }
-        refreshProductList();
+        //refreshProductList();
     }
 
     public void exportProductList(){
@@ -159,6 +150,23 @@ public class Controller {
             }
         }
         return null;
+    }
+
+    public void removeProduct(Product p){
+        listProducts.remove(p);
+
+    }
+
+    public void updateStocks(Factura factura){
+        for(int i = 0; i < factura.getNumberProducts(); i++){
+            getProduct(factura.getListaProduse().get(i).getName()).setQuantity(getProduct(factura.getListaProduse().get(i).getName()).getQuantity() - factura.getListaProduse().get(i).getQuantity());
+        }
+        userInterface.refreshPL();
+        for(int i = 0; i < listProducts.size(); i++){
+            if(listProducts.get(i).getName().equals("Marker")){
+                System.out.println(listProducts.get(i).getQuantity());
+            }
+        }
     }
 
 }

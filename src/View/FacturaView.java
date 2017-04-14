@@ -92,6 +92,7 @@ public class FacturaView {
                         }
                     }
                 }
+                control.updateStocks(noua);
                 c.addFactura(noua);
                 control.refreshClientList();
                 jframe.dispose();

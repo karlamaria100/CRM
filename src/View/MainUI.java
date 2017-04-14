@@ -2,13 +2,10 @@ package View;
 
 import Model.Client;
 import Model.Product;
-import Model.ProductTable;
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +19,7 @@ public class MainUI {
     private JPanel clientList;
     private JPanel productList;
     JTable table;
+    DefaultTableModel dtm;
 
 
     MainUI(Controller control){
@@ -138,10 +136,14 @@ public class MainUI {
     }
 
     public void refreshPL(){
-
-        table.repaint();
-       // productList();
-
+        if (dtm.getRowCount() > 0) {
+            for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+                dtm.removeRow(i);
+            }
+        }
+        for(int i = 0; i < control.getListProducts().size(); i++){
+            productEntry(control.getProduct(i));
+        }
     }
 
     private JPanel clientEntry(Client c){
@@ -188,7 +190,7 @@ public class MainUI {
 
         //ADD PRODUCT
 
-        JPanel newProduct = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JPanel optionPane = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JButton newProductButton = new JButton("Adaugati un produs nou");
         newProductButton.addActionListener(new ActionListener() {
             @Override
@@ -196,7 +198,7 @@ public class MainUI {
                ProductUI prod = new ProductUI(control,acesta);
             }
         });
-        newProduct.add(newProductButton);
+        optionPane.add(newProductButton);
 
         JButton exportProductListButton = new JButton("Exportati lista de produse");
         exportProductListButton.addActionListener(new ActionListener() {
@@ -214,61 +216,46 @@ public class MainUI {
             }
         });
 
-        newProduct.add(newProductButton);
-        newProduct.add(exportProductListButton);
-        newProduct.add(importProductListButton);
+        optionPane.add(newProductButton);
+        optionPane.add(exportProductListButton);
+        optionPane.add(importProductListButton);
 
         //PRODUCT LIST
 
-        table = new JTable(control.getProductTable());
-        table.setFillsViewportHeight(true);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table = productTable();
 
         //PUT EVERYTHING TOGETHER
 
-        panel.add(newProduct,BorderLayout.PAGE_START);
-        panel.add(testTable().getTableHeader(),BorderLayout.PAGE_START);
-        panel.add(testTable(),BorderLayout.CENTER);
+        panel.add(optionPane,BorderLayout.PAGE_START);
+
+        JPanel tablePanel = new JPanel(new BorderLayout());
+        tablePanel.add(table.getTableHeader(),BorderLayout.PAGE_START);
+        tablePanel.add(table,BorderLayout.CENTER);
+
+        panel.add(tablePanel,BorderLayout.CENTER);
 
         return panel;
     }
 
-    private JTable testTable(){
-        String[] columnNames = {"First Name",
-                "Last Name",
-                "Sport",
-                "# of Years",
-                "Vegetarian"};
-
-        Object[][] data = {
-                {"Kathy", "Smith",
-                        "Snowboarding", new Integer(5), new Boolean(false)},
-                {"John", "Doe",
-                        "Rowing", new Integer(3), new Boolean(true)},
-                {"Sue", "Black",
-                        "Knitting", new Integer(2), new Boolean(false)},
-                {"Jane", "White",
-                        "Speed reading", new Integer(20), new Boolean(true)},
-                {"Joe", "Brown",
-                        "Pool", new Integer(10), new Boolean(false)}
-        };
-
-        JTable table = new JTable(data, columnNames);
-        return table;
-    }
-    /*
-    public JPanel productList(){
-
-        productList = new JPanel();
-
-        table = new JTable(control.getProductTable());
+    private JTable productTable(){
+        JTable table = new JTable();
         table.setFillsViewportHeight(true);
-
-        productList.add(new JScrollPane(table));
-        productList.setLayout(new GridLayout(1,1));
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
-        return productList;
+        dtm = new ProductsTableModel(0, 0);
+        String header[] = new String[] {"Nr. Crt", "Nume Produs", "Stoc", "Pret Unitate", "Editare" };
+        dtm.setColumnIdentifiers(header);
+        table.setModel(dtm);
+
+        table.getColumn("Editare").setCellRenderer(new ButtonRenderer());
+        table.getColumn("Editare").setCellEditor(new ButtonEditor(new JCheckBox(),control,dtm,this));
+
+        return table;
     }
-    */
+
+    public void productEntry(Product p){
+        Object[] o = new Object[] {dtm.getRowCount(), p.getName(), p.getQuantity(), p.getPrice(), "Delete"};
+        dtm.addRow(o);
+        table.revalidate();
+    }
 }

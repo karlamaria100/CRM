@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4650656f-2100-4182-8536-8a40174e6952" name="Default" comment="Implementat prima varianta de Raport">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Model/ProductTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/Model/Client.class" afterPath="$PROJECT_DIR$/out/production/CRM/Model/Client.class" />
+    <list default="true" id="4650656f-2100-4182-8536-8a40174e6952" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ButtonEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ButtonRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ProductsTableModel.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/ProductTable.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/Model/Product.class" afterPath="$PROJECT_DIR$/out/production/CRM/Model/Product.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/Controller.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/FacturaView.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/FacturaView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$1.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$2.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$3.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$4.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/ProductUI$1.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/ProductUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/ProductUI.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/ProductUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exportClients.txt" afterPath="$PROJECT_DIR$/exportClients.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exportProducts.txt" afterPath="$PROJECT_DIR$/exportProducts.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Client.java" afterPath="$PROJECT_DIR$/src/Model/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Factura.java" afterPath="$PROJECT_DIR$/src/Model/Factura.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Product.java" afterPath="$PROJECT_DIR$/src/Model/Product.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Controller.java" afterPath="$PROJECT_DIR$/src/View/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/FacturaView.java" afterPath="$PROJECT_DIR$/src/View/FacturaView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainUI.java" afterPath="$PROJECT_DIR$/src/View/MainUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ProductUI.java" afterPath="$PROJECT_DIR$/src/View/ProductUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/RaportUI.java" afterPath="$PROJECT_DIR$/src/View/RaportUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,47 +46,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/ProductTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#927#928#0" expanded="true" />
-                <element signature="e#976#977#0" expanded="true" />
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1137#1138#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+            <state relative-caret-position="35">
+              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding>
                 <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
                 <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
                 <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
                 <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
-                <element signature="class#6064:6248" expanded="false" />
-                <element signature="class#6433:6599" expanded="false" />
-                <element signature="class#6742:6908" expanded="false" />
+                <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,14 +65,10 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="289">
+              <caret line="163" column="31" lean-forward="false" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
               <folding>
-                <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
                 <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-                <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
                 <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
                 <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
                 <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
@@ -105,17 +76,32 @@
                 <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
                 <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
                 <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
+                <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Product.java">
+      <file leaf-file-name="ButtonEditor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ButtonEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="49" column="18" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="341">
+              <caret line="55" column="14" lean-forward="false" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FacturaView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="94" column="43" lean-forward="true" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+              <folding>
+                <element signature="class#4717:6021" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +109,8 @@
       <file leaf-file-name="ProductUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/ProductUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+            <state relative-caret-position="158">
+              <caret line="103" column="136" lean-forward="true" selection-start-line="103" selection-start-column="136" selection-end-line="103" selection-end-column="136" />
               <folding />
             </state>
           </provider>
@@ -159,16 +145,19 @@
         <option value="$PROJECT_DIR$/src/Model/Company.java" />
         <option value="$PROJECT_DIR$/src/Model/Customer.java" />
         <option value="$PROJECT_DIR$/src/View/NewClientUI.java" />
-        <option value="$PROJECT_DIR$/src/View/FacturaView.java" />
-        <option value="$PROJECT_DIR$/src/Model/Factura.java" />
         <option value="$PROJECT_DIR$/src/View/RaportUI.java" />
         <option value="$PROJECT_DIR$/src/Model/Client.java" />
         <option value="$PROJECT_DIR$/src/View/MainUI2.java" />
-        <option value="$PROJECT_DIR$/src/View/ProductUI.java" />
-        <option value="$PROJECT_DIR$/src/Model/Product.java" />
-        <option value="$PROJECT_DIR$/src/View/Controller.java" />
         <option value="$PROJECT_DIR$/src/Model/ProductTable.java" />
+        <option value="$PROJECT_DIR$/src/View/ProductUI.java" />
+        <option value="$PROJECT_DIR$/src/Model/Factura.java" />
+        <option value="$PROJECT_DIR$/src/Model/Product.java" />
+        <option value="$PROJECT_DIR$/src/View/ButtonRenderer.java" />
+        <option value="$PROJECT_DIR$/src/View/FacturaView.java" />
+        <option value="$PROJECT_DIR$/src/View/Controller.java" />
+        <option value="$PROJECT_DIR$/src/View/ProductsTableModel.java" />
         <option value="$PROJECT_DIR$/src/View/MainUI.java" />
+        <option value="$PROJECT_DIR$/src/View/ButtonEditor.java" />
       </list>
     </option>
   </component>
@@ -199,8 +188,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -555,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491236779548</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru.">
+      <created>1491928569044</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1491928569044</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -572,31 +568,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.4935275" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.4935275" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.50323623" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3034258" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30016312" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17673716" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15030211" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32463294" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39907727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -628,12 +624,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30463576" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30016312" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17673716" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24726135" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -648,7 +644,8 @@
     <MESSAGE value="Added Customer Class" />
     <MESSAGE value="Mai trebuie doar raport de implementat" />
     <MESSAGE value="Implementat prima varianta de Raport" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementat prima varianta de Raport" />
+    <MESSAGE value="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru." />
+    <option name="LAST_COMMIT_MESSAGE" value="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -661,79 +658,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
-            <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
-            <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
-            <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
-            <element signature="class#6064:6248" expanded="false" />
-            <element signature="class#6433:6599" expanded="false" />
-            <element signature="class#6742:6908" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Company.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding>
-            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-            <element signature="method#clientForm#0;class#NewClientUI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
-            <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
-            <element signature="method#importClientsList#0;class#Controller#0" expanded="false" />
-            <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
-            <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
-            <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#834#835#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -755,7 +679,7 @@
         <state relative-caret-position="2992">
           <caret line="230" column="180" lean-forward="false" selection-start-line="230" selection-start-column="180" selection-end-line="230" selection-end-column="180" />
           <folding>
-            <element signature="class#4673:5977" expanded="false" />
+            <element signature="class#4717:6021" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -765,15 +689,7 @@
         <state relative-caret-position="816">
           <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#763#764#0" expanded="false" />
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#835#836#0" expanded="false" />
-            <element signature="e#877#878#0" expanded="false" />
-            <element signature="method#add#0;class#Factura#0" expanded="false" />
             <element signature="method#toString#0;class#Factura#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1294#1295#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -787,9 +703,7 @@
             <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
             <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
-            <element signature="class#6064:6248" expanded="false" />
-            <element signature="class#6433:6599" expanded="false" />
-            <element signature="class#6742:6908" expanded="false" />
+            <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,7 +726,6 @@
           <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
           <folding>
             <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-            <element signature="method#clientForm#0;class#NewClientUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,11 +735,7 @@
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
-            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
             <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
@@ -834,6 +743,7 @@
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
+            <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -856,7 +766,7 @@
         <state relative-caret-position="2295">
           <caret line="150" column="13" lean-forward="false" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding>
-            <element signature="class#4673:5977" expanded="false" />
+            <element signature="class#4717:6021" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -878,9 +788,7 @@
             <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
             <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
-            <element signature="class#6064:6248" expanded="false" />
-            <element signature="class#6433:6599" expanded="false" />
-            <element signature="class#6742:6908" expanded="false" />
+            <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -903,7 +811,6 @@
           <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
           <folding>
             <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-            <element signature="method#clientForm#0;class#NewClientUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -913,11 +820,7 @@
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
-            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
             <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
@@ -925,6 +828,7 @@
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
+            <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -947,7 +851,7 @@
         <state relative-caret-position="2550">
           <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding>
-            <element signature="class#4673:5977" expanded="false" />
+            <element signature="class#4717:6021" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1001,7 +905,7 @@
         <state relative-caret-position="2295">
           <caret line="150" column="13" lean-forward="false" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding>
-            <element signature="class#4673:5977" expanded="false" />
+            <element signature="class#4717:6021" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1015,9 +919,7 @@
             <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
             <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
-            <element signature="class#6064:6248" expanded="false" />
-            <element signature="class#6433:6599" expanded="false" />
-            <element signature="class#6742:6908" expanded="false" />
+            <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1040,7 +942,6 @@
           <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
           <folding>
             <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-            <element signature="method#clientForm#0;class#NewClientUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1050,11 +951,7 @@
         <state relative-caret-position="170">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
-            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
             <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
@@ -1062,6 +959,7 @@
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
+            <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1101,39 +999,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="230" column="180" lean-forward="false" selection-start-line="230" selection-start-column="180" selection-end-line="230" selection-end-column="180" />
-          <folding>
-            <element signature="class#4673:5977" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/RaportUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
           <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Factura.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="63" column="21" lean-forward="false" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#763#764#0" expanded="false" />
-            <element signature="e#798#799#0" expanded="false" />
-            <element signature="e#835#836#0" expanded="false" />
-            <element signature="e#877#878#0" expanded="false" />
-            <element signature="method#add#0;class#Factura#0" expanded="false" />
-            <element signature="method#toString#0;class#Factura#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1294#1295#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,25 +1032,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding>
-            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-            <element signature="method#clientForm#0;class#NewClientUI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainUI2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="283" column="5" lean-forward="true" selection-start-line="283" selection-start-column="5" selection-end-line="283" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainUI2.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1189,24 +1041,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ProductTable.java" />
+    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="106" column="27" lean-forward="false" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
+          <folding>
+            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
+        <state relative-caret-position="207">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="method#toString#0;class#Product#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Factura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="method#toString#0;class#Factura#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/swing/JTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="2560" column="0" lean-forward="false" selection-start-line="2560" selection-start-column="0" selection-end-line="2560" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/swing/table/DefaultTableColumnModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ProductsTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
-            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ButtonRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ProductUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="103" column="136" lean-forward="true" selection-start-line="103" selection-start-column="136" selection-end-line="103" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="94" column="43" lean-forward="true" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+          <folding>
+            <element signature="class#4717:6021" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ButtonEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="55" column="14" lean-forward="false" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="163" column="31" lean-forward="false" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
+          <folding>
             <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
@@ -1214,54 +1159,21 @@
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ProductUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="49" column="18" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ProductTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+        <state relative-caret-position="35">
+          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding>
             <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
             <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
-            <element signature="class#6064:6248" expanded="false" />
-            <element signature="class#6433:6599" expanded="false" />
-            <element signature="class#6742:6908" expanded="false" />
+            <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
           </folding>
         </state>
       </provider>
