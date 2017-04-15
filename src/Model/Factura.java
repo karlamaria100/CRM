@@ -1,18 +1,13 @@
 package Model;
 
-import oracle.jrockit.jfr.StringConstantPool;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * Created by rares on 06-Apr-17.
- */
 public class Factura implements Serializable{
 
     private int id = 0; //TODO Implement ID Factura
 
-    ArrayList<Product> listaProduse = new ArrayList<Product>();
+    private ArrayList<Product> listaProduse = new ArrayList<Product>();
 
     public ArrayList<Product> getListaProduse() {
         return listaProduse;

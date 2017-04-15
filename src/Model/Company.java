@@ -1,8 +1,6 @@
 package Model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Company extends Client implements Serializable{
 

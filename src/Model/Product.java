@@ -2,16 +2,13 @@ package Model;
 
 import java.io.Serializable;
 
-/**
- * Created by Rares on 4/1/2017.
- */
 public class Product implements Serializable{
 
     //PRODUCT ID CU GRIJA LA FAPTUL CA FACTURA GENEREAZA UN OBIECT NOU.
 
-    String name;
-    double quantity;
-    double price;
+    private String name;
+    private double quantity;
+    private double price;
 
     public Product(String name, double quantity, double price) {
         this.name = name;

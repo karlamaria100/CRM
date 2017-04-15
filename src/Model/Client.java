@@ -1,7 +1,6 @@
 package Model;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -9,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Client implements Serializable {
 
     ArrayList<Factura> listFacturi = new ArrayList<Factura>();
-    static AtomicInteger nextId = new AtomicInteger();
+    public static AtomicInteger nextId = new AtomicInteger();
     private int id;
 
     public String getName(){
@@ -33,9 +32,5 @@ public class Client implements Serializable {
 
     public void addFactura(Factura factura){
         listFacturi.add(factura);
-    }
-
-    public void incrementID(){
-        id = nextId.incrementAndGet();
     }
 }

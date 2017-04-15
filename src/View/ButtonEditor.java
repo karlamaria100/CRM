@@ -1,16 +1,12 @@
 package View;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by rares on 14-Apr-17.
- */
 class ButtonEditor extends DefaultCellEditor {
-    protected JButton button;
+    private JButton button;
 
     private String label;
 
@@ -18,12 +14,12 @@ class ButtonEditor extends DefaultCellEditor {
 
     private Controller control;
 
-    private DefaultTableModel dtm;
+    private int column;
+    private int row;
 
-    private MainUI userinterface;
-
-    public ButtonEditor(JCheckBox checkBox,Controller control,DefaultTableModel dtm, MainUI userinterface) {
+    public ButtonEditor(JCheckBox checkBox, Controller control) {
         super(checkBox);
+        this.control = control;
         button = new JButton();
         button.setOpaque(true);
         button.addActionListener(new ActionListener() {
@@ -31,13 +27,11 @@ class ButtonEditor extends DefaultCellEditor {
                 fireEditingStopped();
             }
         });
-        this.control = control;
-        this.dtm = dtm;
-        this.userinterface = userinterface;
     }
 
-    public Component getTableCellEditorComponent(JTable table, Object value,
-                                                 boolean isSelected, int row, int column) {
+    public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        this.row = row;
+        this.column = column;
         if (isSelected) {
             button.setForeground(table.getSelectionForeground());
             button.setBackground(table.getSelectionBackground());
@@ -53,11 +47,16 @@ class ButtonEditor extends DefaultCellEditor {
 
     public Object getCellEditorValue() {
         if (isPushed) {
-            //userinterface.dtm.removeRow(userinterface.table.getSelectedRow());
-            JOptionPane.showMessageDialog(button, label + ": Ouch!");
+            //
+            //
+            //JOptionPane.showMessageDialog(button, label + ": Ouch!");
+            if(column == 4)
+                control.removeProduct(row);
+            if(column == 5)
+                control.userInterface.editProduct(row);
         }
         isPushed = false;
-        return new String(label);
+        return label;
     }
 
     public boolean stopCellEditing() {

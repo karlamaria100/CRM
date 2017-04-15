@@ -6,12 +6,13 @@ import sun.applet.Main;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Controller {
 
     private ArrayList<Client> listClients = new ArrayList<>();
     private ArrayList<Product> listProducts = new ArrayList<>();
-    private MainUI userInterface = new MainUI(this);
+    public MainUI userInterface = new MainUI(this);
 
     public void addCustomer(String nameCustomer, String surnameCustomer){
         Customer c = new Customer(nameCustomer,surnameCustomer);
@@ -105,9 +106,13 @@ public class Controller {
             System.out.println("Client class not found");
             c.printStackTrace();
         }
+        int indexing = 0;
         for(int i = 0; i < arr.size(); i++){
             listClients.add(arr.get(i));
+            if(arr.get(i).getId() > indexing)
+                indexing = arr.get(i).getId();
         }
+        Client.nextId = new AtomicInteger(indexing);
         refreshClientList();
     }
 
@@ -154,7 +159,18 @@ public class Controller {
 
     public void removeProduct(Product p){
         listProducts.remove(p);
+        userInterface.refreshPL();
+    }
 
+    public void removeProduct(int row){
+        userInterface.dtm.getValueAt(row,1);
+        for(int i = 0; i < listProducts.size(); i++){
+            if(listProducts.get(i).getName().equals(userInterface.dtm.getValueAt(row,1))){
+                System.out.print(listProducts.get(i).getName());
+                removeProduct(listProducts.get(i));
+                break;
+            }
+        }
     }
 
     public void updateStocks(Factura factura){
@@ -167,6 +183,13 @@ public class Controller {
                 System.out.println(listProducts.get(i).getQuantity());
             }
         }
+    }
+
+    public void editProduct(Product product, String newName, String newQuantity, String newPrice){
+        product.setName(newName);
+        product.setPrice(Double.parseDouble(newPrice));
+        product.setQuantity(Double.parseDouble(newQuantity));
+        userInterface.refreshPL();
     }
 
 }

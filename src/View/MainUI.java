@@ -2,6 +2,7 @@ package View;
 
 import Model.Client;
 import Model.Product;
+import javafx.stage.WindowEvent;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -9,7 +10,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
 import java.util.ArrayList;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
 
 public class MainUI {
 
@@ -17,9 +21,10 @@ public class MainUI {
     private MainUI acesta = this;
     private JFrame jframe;
     private JPanel clientList;
-    private JPanel productList;
     JTable table;
     DefaultTableModel dtm;
+    JButton exportClientsButton;
+    JButton importClientsButton;
 
 
     MainUI(Controller control){
@@ -39,6 +44,21 @@ public class MainUI {
         JTabbedPane jtp = new JTabbedPane();
         jtp.addTab("Clienti", clientsPane());
         jtp.addTab("Produse", productsPane());
+
+        jframe.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                String[] options = {"Exporta", "Nu exporta", "Cancel"};
+                int response = JOptionPane.showOptionDialog(jframe,"Are you sure to close this window?",
+                        "Really Closing?",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,null,options, options[0]);
+                if(response == 0){
+                    exportClientsButton.doClick();
+                }
+            }
+        });
+
 
         jframe.add(jtp);
         jframe.pack();
@@ -73,7 +93,7 @@ public class MainUI {
         });
         newClient.add(newClientCompanyButton);
 
-        JButton exportClientsButton = new JButton("Exportati lista de clienti");
+        exportClientsButton = new JButton("Exportati lista de clienti");
         exportClientsButton.setEnabled(false);
         exportClientsButton.addActionListener(new ActionListener() {
             @Override
@@ -83,7 +103,7 @@ public class MainUI {
         });
         newClient.add(exportClientsButton);
 
-        JButton importClientsButton = new JButton("Importati lista de clienti");
+        importClientsButton = new JButton("Importati lista de clienti");
         importClientsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -212,6 +232,7 @@ public class MainUI {
         importProductListButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                importProductListButton.setEnabled(false);
                 control.importProductList();
             }
         });
@@ -243,19 +264,33 @@ public class MainUI {
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         dtm = new ProductsTableModel(0, 0);
-        String header[] = new String[] {"Nr. Crt", "Nume Produs", "Stoc", "Pret Unitate", "Editare" };
+        String header[] = new String[] {"Nr. Crt", "Nume Produs", "Stoc", "Pret Unitate", "Delete", "Editare" };
         dtm.setColumnIdentifiers(header);
         table.setModel(dtm);
 
+        table.getColumn("Delete").setCellRenderer(new ButtonRenderer());
+        table.getColumn("Delete").setCellEditor(new ButtonEditor(new JCheckBox(),control));
+
         table.getColumn("Editare").setCellRenderer(new ButtonRenderer());
-        table.getColumn("Editare").setCellEditor(new ButtonEditor(new JCheckBox(),control,dtm,this));
+        table.getColumn("Editare").setCellEditor(new ButtonEditor(new JCheckBox(),control));
 
         return table;
     }
 
     public void productEntry(Product p){
-        Object[] o = new Object[] {dtm.getRowCount(), p.getName(), p.getQuantity(), p.getPrice(), "Delete"};
+        Object[] o = new Object[] {dtm.getRowCount(), p.getName(), p.getQuantity(), p.getPrice(), "Delete", "Editeaza"};
         dtm.addRow(o);
         table.revalidate();
+    }
+
+    public void editProduct(int row){
+
+        for(int i = 0; i < control.getListProducts().size(); i++){
+            System.out.println(dtm.getValueAt( row,1 ) + control.getListProducts().get(i).getName() + control.getListProducts().get(i).getName().equals( dtm.getValueAt( row,1 ))  );
+            if(control.getListProducts().get(i).getName().equals( dtm.getValueAt( row,1 )) == true) {
+                ProductEditUI peui = new ProductEditUI(control.getListProducts().get(i), control);
+            }
+        }
+
     }
 }

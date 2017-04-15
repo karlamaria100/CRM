@@ -98,7 +98,6 @@ public class FacturaView {
                 jframe.dispose();
             }
         });
-        JButton clearButton = new JButton("Clear");
 
         totalFactura = new JLabel("0.00");
         JLabel RON = new JLabel("RON");
@@ -106,7 +105,6 @@ public class FacturaView {
         operationButtons.add(nrProductsLabel);
         operationButtons.add(totalFactura);
         operationButtons.add(RON);
-        operationButtons.add(clearButton);
         operationButtons.add(saveButton);
 
         form.add(operationButtons, BorderLayout.SOUTH);
