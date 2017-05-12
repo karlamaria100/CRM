@@ -1,7 +1,7 @@
-package View;
+package pao.View;
 
-import Model.Client;
-import Model.Product;
+import pao.Model.Client;
+import pao.Model.Product;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -73,6 +73,7 @@ public class MainUI {
         });
         newClient.add(newClientCompanyButton);
 
+        /*
         JButton exportClientsButton = new JButton("Exportati lista de clienti");
         exportClientsButton.setEnabled(false);
         exportClientsButton.addActionListener(new ActionListener() {
@@ -82,7 +83,7 @@ public class MainUI {
             }
         });
         newClient.add(exportClientsButton);
-
+        */
         JButton importClientsButton = new JButton("Importati lista de clienti");
         importClientsButton.addActionListener(new ActionListener() {
             @Override
@@ -90,7 +91,7 @@ public class MainUI {
                 control.importClientsList();
                 newClientCompanyButton.setEnabled(true);
                 newClientPersonButton.setEnabled(true);
-                exportClientsButton.setEnabled(true);
+                //exportClientsButton.setEnabled(true);
                 importClientsButton.setEnabled(false);
             }
         });
@@ -126,8 +127,8 @@ public class MainUI {
         return clientList;
     }
 
-    public void refreshCL(){
-        ArrayList<Client> listClients = control.getListCompanies();
+    public void refreshCL(ArrayList<Client> listClients){
+        //ArrayList<Client> listClients = control.getListCompanies();
         clientList.removeAll();
         for(int i = 0; i < listClients.size(); i++){
             clientList.add(clientEntry(listClients.get(i)));

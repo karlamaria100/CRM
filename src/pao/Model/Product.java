@@ -1,4 +1,4 @@
-package Model;
+package pao.Model;
 
 import java.io.Serializable;
 

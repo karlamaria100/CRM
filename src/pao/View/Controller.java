@@ -1,21 +1,23 @@
-package View;
+package pao.View;
 
-import Model.*;
-import View.MainUI;
-import sun.applet.Main;
+import pao.Model.*;
+import pao.Network.ConnectionController;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class Controller {
 
-    private ArrayList<Client> listClients = new ArrayList<>();
+    //private ArrayList<Client> listClients = new ArrayList<>();
     private ArrayList<Product> listProducts = new ArrayList<>();
     private MainUI userInterface = new MainUI(this);
 
     public void addCustomer(String nameCustomer, String surnameCustomer){
         Customer c = new Customer(nameCustomer,surnameCustomer);
-        listClients.add(c);
+        ConnectionController.getInstance().sendCustomer(c);
+        importClientsList();
+        //refreshClientList();
+        //listClients.add(c);
     }
 
     public void addProduct(String nameProduct, String quantityProduct, String priceProduct){
@@ -27,17 +29,20 @@ public class Controller {
     public void addCompany(String nameCompany){
 
         Company c = new Company(nameCompany);
-        listClients.add(c);
+        ConnectionController.getInstance().sendCompany(c);
+        importClientsList();
+        //listClients.add(c);
     }
 
-    public void refreshClientList(){
-        userInterface.refreshCL();
+    public void refreshClientList(ArrayList<Client> c ){
+        userInterface.refreshCL(c);
     }
 
+    /*
     public ArrayList<Client> getListCompanies(){
         return listClients;
     }
-
+    */
     public ArrayList<Product> getListProducts(){return listProducts;}
 
     public void importProductList(){
@@ -76,6 +81,7 @@ public class Controller {
 
     }
 
+    /*
     public void exportClientList(){
         try {
             FileOutputStream fileOut = new FileOutputStream("exportClients.txt");
@@ -89,26 +95,13 @@ public class Controller {
         }
 
     }
+    */
 
     public void importClientsList(){
-        ArrayList<Client> arr = null;
-        try {
-            FileInputStream fileIn = new FileInputStream("exportClients.txt");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            arr = (ArrayList<Client>) in.readObject();
-            in.close();
-            fileIn.close();
-        }catch(IOException i) {
-            i.printStackTrace();
-            return;
-        }catch(ClassNotFoundException c) {
-            System.out.println("Client class not found");
-            c.printStackTrace();
-        }
-        for(int i = 0; i < arr.size(); i++){
-            listClients.add(arr.get(i));
-        }
-        refreshClientList();
+
+
+        //listClients = ConnectionController.getInstance().requestClientList();
+        refreshClientList(ConnectionController.getInstance().requestClientList());
     }
 
     public Product queryProduct(String nameProduct){

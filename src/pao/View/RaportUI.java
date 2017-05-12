@@ -1,7 +1,7 @@
-package View;
+package pao.View;
 
-import Model.Client;
-import Model.Factura;
+import pao.Model.Client;
+import pao.Model.Factura;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

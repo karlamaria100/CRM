@@ -1,7 +1,8 @@
-package View;
+package pao.View;
 
-import Model.Client;
-import Model.Factura;
+import pao.Model.Client;
+import pao.Model.Factura;
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -94,7 +95,7 @@ public class FacturaView {
                 }
                 control.updateStocks(noua);
                 c.addFactura(noua);
-                control.refreshClientList();
+                ConnectionController.getInstance().requestClientList();
                 jframe.dispose();
             }
         });

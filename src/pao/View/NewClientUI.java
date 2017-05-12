@@ -1,11 +1,9 @@
-package View;
+package pao.View;
 
-import sun.applet.Main;
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -109,7 +107,7 @@ public class NewClientUI {
                 else{
                     control.addCustomer(namePersonTextField.getText(), surnamePersonTextField.getText());
                 }
-                control.refreshClientList();
+                ConnectionController.getInstance().requestClientList();
                 jframe.dispose();
             }
         });

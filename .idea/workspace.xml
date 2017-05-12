@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4650656f-2100-4182-8536-8a40174e6952" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ButtonEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ButtonRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ProductsTableModel.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Model/ProductTable.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/Model/Product.class" afterPath="$PROJECT_DIR$/out/production/CRM/Model/Product.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/Controller.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/FacturaView.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/FacturaView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$1.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$2.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$3.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$4.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/MainUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/ProductUI$1.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/ProductUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CRM/View/ProductUI.class" afterPath="$PROJECT_DIR$/out/production/CRM/View/ProductUI.class" />
+    <list default="true" id="4650656f-2100-4182-8536-8a40174e6952" name="Default" comment="Adaptare pentru Server">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pao/Network/ConnectionController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/Model/Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/Model/Company.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/Model/Product.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/FacturaView.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/MainUI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/NewClientUI$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/NewClientUI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/ProductUI$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CRM/View/ProductUI.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/pao/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Client.java" afterPath="$PROJECT_DIR$/src/pao/Model/Client.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Company.java" afterPath="$PROJECT_DIR$/src/pao/Model/Company.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Customer.java" afterPath="$PROJECT_DIR$/src/pao/Model/Customer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Factura.java" afterPath="$PROJECT_DIR$/src/pao/Model/Factura.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Model/Product.java" afterPath="$PROJECT_DIR$/src/pao/Model/Product.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/ButtonEditor.java" afterPath="$PROJECT_DIR$/src/pao/View/ButtonEditor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/ButtonRenderer.java" afterPath="$PROJECT_DIR$/src/pao/View/ButtonRenderer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/Controller.java" afterPath="$PROJECT_DIR$/src/pao/View/Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/FacturaView.java" afterPath="$PROJECT_DIR$/src/pao/View/FacturaView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/MainUI.java" afterPath="$PROJECT_DIR$/src/pao/View/MainUI.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/NewClientUI.java" afterPath="$PROJECT_DIR$/src/pao/View/NewClientUI.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/ProductUI.java" afterPath="$PROJECT_DIR$/src/pao/View/ProductUI.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/ProductsTableModel.java" afterPath="$PROJECT_DIR$/src/pao/View/ProductsTableModel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/View/RaportUI.java" afterPath="$PROJECT_DIR$/src/pao/View/RaportUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exportClients.txt" afterPath="$PROJECT_DIR$/exportClients.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exportProducts.txt" afterPath="$PROJECT_DIR$/exportProducts.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Factura.java" afterPath="$PROJECT_DIR$/src/Model/Factura.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Product.java" afterPath="$PROJECT_DIR$/src/Model/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Controller.java" afterPath="$PROJECT_DIR$/src/View/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/FacturaView.java" afterPath="$PROJECT_DIR$/src/View/FacturaView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainUI.java" afterPath="$PROJECT_DIR$/src/View/MainUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ProductUI.java" afterPath="$PROJECT_DIR$/src/View/ProductUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,72 +57,110 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
+      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pao/View/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+            <state relative-caret-position="-544">
+              <caret line="93" column="18" lean-forward="false" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
               <folding>
-                <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
-                <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
-                <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
+                <element signature="method#refreshPL#0;class#MainUI#0" expanded="false" />
                 <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
                 <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
+                <element signature="method#productTable#0;class#MainUI#0" expanded="false" />
+                <marker date="1494629630575" expanded="false" signature="2476:2495" ph=" { " />
+                <marker date="1494629630575" expanded="false" signature="2522:2536" ph=" }" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewClientUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pao/View/NewClientUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="100" column="52" lean-forward="false" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/pao/View/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="163" column="31" lean-forward="false" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
+            <state relative-caret-position="235">
+              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding>
-                <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
+                <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
+                <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
                 <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
                 <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
-                <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
-                <element signature="method#importClientsList#0;class#Controller#0" expanded="false" />
                 <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
                 <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
                 <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
                 <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
+                <element signature="method#updateStocks#0;class#Controller#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ButtonEditor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/ButtonEditor.java">
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pao/Model/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="55" column="14" lean-forward="false" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+            <state relative-caret-position="170">
+              <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#401#402#0" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FacturaView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+        <entry file="file://$PROJECT_DIR$/src/pao/View/FacturaView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="94" column="43" lean-forward="true" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+            <state relative-caret-position="128">
+              <caret line="97" column="71" lean-forward="false" selection-start-line="97" selection-start-column="71" selection-end-line="97" selection-end-column="71" />
               <folding>
-                <element signature="class#4717:6021" expanded="false" />
+                <element signature="class#4797:6101" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/ProductUI.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pao/Model/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="103" column="136" lean-forward="true" selection-start-line="103" selection-start-column="136" selection-end-line="103" selection-end-column="136" />
+            <state relative-caret-position="153">
+              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Factura.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pao/Model/Factura.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConnectionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pao/Network/ConnectionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#requestClientList#0;class#ConnectionController#0" expanded="false" />
+                <element signature="method#requestProductList#0;class#ConnectionController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,6 +173,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>L</find>
+      <find>CL</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,7 +197,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/exportProducts.txt" />
-        <option value="$PROJECT_DIR$/src/Model/Company.java" />
         <option value="$PROJECT_DIR$/src/Model/Customer.java" />
         <option value="$PROJECT_DIR$/src/View/NewClientUI.java" />
         <option value="$PROJECT_DIR$/src/View/RaportUI.java" />
@@ -154,10 +208,20 @@
         <option value="$PROJECT_DIR$/src/Model/Product.java" />
         <option value="$PROJECT_DIR$/src/View/ButtonRenderer.java" />
         <option value="$PROJECT_DIR$/src/View/FacturaView.java" />
-        <option value="$PROJECT_DIR$/src/View/Controller.java" />
         <option value="$PROJECT_DIR$/src/View/ProductsTableModel.java" />
         <option value="$PROJECT_DIR$/src/View/MainUI.java" />
         <option value="$PROJECT_DIR$/src/View/ButtonEditor.java" />
+        <option value="$PROJECT_DIR$/src/View/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Model/Company.java" />
+        <option value="$PROJECT_DIR$/src/Network/ConnectionController.java" />
+        <option value="$PROJECT_DIR$/src/pao/Main.java" />
+        <option value="$PROJECT_DIR$/src/pao/Network/ConnectionController.java" />
+        <option value="$PROJECT_DIR$/src/pao/View/Controller.java" />
+        <option value="$PROJECT_DIR$/src/pao/View/MainUI.java" />
+        <option value="$PROJECT_DIR$/src/pao/View/NewClientUI.java" />
+        <option value="$PROJECT_DIR$/src/pao/View/FacturaView.java" />
+        <option value="$PROJECT_DIR$/src/pao/Model/Customer.java" />
       </list>
     </option>
   </component>
@@ -188,8 +252,63 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pao.Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CRM">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CRM">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -215,6 +334,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -227,6 +350,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -248,13 +375,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="pao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Network" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CRM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,7 +429,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="pao.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -293,7 +445,7 @@
     <configuration default="false" name="MainUI2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="View.*" />
+          <option name="PATTERN" value="pao.View.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -551,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491928569044</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru.">
+      <created>1492162360311</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492162360311</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -568,24 +727,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.4935275" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.4935275" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.50323623" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3034258" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3034258" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15030211" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15483384" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32463294" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -645,11 +804,12 @@
     <MESSAGE value="Mai trebuie doar raport de implementat" />
     <MESSAGE value="Implementat prima varianta de Raport" />
     <MESSAGE value="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru." />
-    <option name="LAST_COMMIT_MESSAGE" value="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru." />
+    <MESSAGE value="Adaptare pentru Server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adaptare pentru Server" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -658,228 +818,196 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/RaportUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/RaportUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/FacturaView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2992">
           <caret line="230" column="180" lean-forward="false" selection-start-line="230" selection-start-column="180" selection-end-line="230" selection-end-column="180" />
           <folding>
-            <element signature="class#4717:6021" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="class#4797:6101" expanded="false" />
+            <element signature="e#6030#6031#0" expanded="false" />
+            <element signature="e#6090#6091#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Factura.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Factura.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
-          <folding>
-            <element signature="method#toString#0;class#Factura#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3757">
           <caret line="248" column="34" lean-forward="false" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
           <folding>
-            <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
-            <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
-            <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
+            <element signature="method#refreshPL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
             <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
+            <element signature="method#productTable#0;class#MainUI#0" expanded="false" />
+            <marker date="1494629630575" expanded="false" signature="2476:2495" ph=" { " />
+            <marker date="1494629630575" expanded="false" signature="2522:2536" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Company.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Company.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/NewClientUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
-          <folding>
-            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
-            <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
+            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
-            <element signature="method#importClientsList#0;class#Controller#0" expanded="false" />
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
             <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateStocks#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#834#835#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/FacturaView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2295">
           <caret line="150" column="13" lean-forward="false" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding>
-            <element signature="class#4717:6021" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="class#4797:6101" expanded="false" />
+            <element signature="e#6030#6031#0" expanded="false" />
+            <element signature="e#6090#6091#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4216">
           <caret line="248" column="34" lean-forward="true" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
           <folding>
-            <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
-            <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
-            <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
+            <element signature="method#refreshPL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
             <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
+            <element signature="method#productTable#0;class#MainUI#0" expanded="false" />
+            <marker date="1494629630575" expanded="false" signature="2476:2495" ph=" { " />
+            <marker date="1494629630575" expanded="false" signature="2522:2536" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Company.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Company.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/NewClientUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
-          <folding>
-            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
-            <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
+            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
-            <element signature="method#importClientsList#0;class#Controller#0" expanded="false" />
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
             <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateStocks#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#834#835#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/FacturaView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding>
-            <element signature="class#4717:6021" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="class#4797:6101" expanded="false" />
+            <element signature="e#6030#6031#0" expanded="false" />
+            <element signature="e#6090#6091#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ProductUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/ProductUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="105" column="33" lean-forward="true" selection-start-line="104" selection-start-column="16" selection-end-line="105" selection-end-column="33" />
@@ -900,88 +1028,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/FacturaView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2295">
           <caret line="150" column="13" lean-forward="false" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding>
-            <element signature="class#4717:6021" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="class#4797:6101" expanded="false" />
+            <element signature="e#6030#6031#0" expanded="false" />
+            <element signature="e#6090#6091#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3757">
           <caret line="248" column="34" lean-forward="false" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
           <folding>
-            <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
-            <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
-            <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
+            <element signature="method#refreshPL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
             <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
+            <element signature="method#productTable#0;class#MainUI#0" expanded="false" />
+            <marker date="1494629630575" expanded="false" signature="2476:2495" ph=" { " />
+            <marker date="1494629630575" expanded="false" signature="2522:2536" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Company.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Company.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/NewClientUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="103" column="37" lean-forward="false" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
-          <folding>
-            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
-            <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
+            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
             <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
             <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
-            <element signature="method#importClientsList#0;class#Controller#0" expanded="false" />
             <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
             <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
             <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateStocks#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#834#835#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,84 +1116,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/RaportUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/RaportUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
           <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Company.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#347#348#0" expanded="false" />
-            <element signature="e#374#375#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-          <folding>
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#789#790#0" expanded="false" />
-            <element signature="e#834#835#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainUI2.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/ProductTable.java" />
-    <entry file="file://$PROJECT_DIR$/src/View/NewClientUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="106" column="27" lean-forward="false" selection-start-line="106" selection-start-column="27" selection-end-line="106" selection-end-column="27" />
-          <folding>
-            <element signature="method#startWindow#0;class#NewClientUI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="method#toString#0;class#Product#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Factura.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="method#toString#0;class#Factura#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1084,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="2560" column="0" lean-forward="false" selection-start-line="2560" selection-start-column="0" selection-end-line="2560" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,20 +1146,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ProductsTableModel.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/ProductsTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ButtonRenderer.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/ButtonRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
@@ -1118,27 +1163,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ProductUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/ProductUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="103" column="136" lean-forward="true" selection-start-line="103" selection-start-column="136" selection-end-line="103" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/FacturaView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="94" column="43" lean-forward="true" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+        <state relative-caret-position="1683">
+          <caret line="103" column="136" lean-forward="false" selection-start-line="103" selection-start-column="136" selection-end-line="103" selection-end-column="136" />
           <folding>
-            <element signature="class#4717:6021" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ButtonEditor.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/View/ButtonEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="221">
           <caret line="55" column="14" lean-forward="false" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1146,34 +1183,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Company.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="163" column="31" lean-forward="false" selection-start-line="163" selection-start-column="31" selection-end-line="163" selection-end-column="31" />
+        <state relative-caret-position="153">
+          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="method#addCustomer#0;class#Controller#0" expanded="false" />
-            <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#exportClientList#0;class#Controller#0" expanded="false" />
-            <element signature="method#importClientsList#0;class#Controller#0" expanded="false" />
-            <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
-            <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
-            <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
-            <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1095#1096#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainUI.java">
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Factura.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+        <state relative-caret-position="188">
+          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/View/MainUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="93" column="18" lean-forward="false" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
           <folding>
-            <element signature="method#clientsPane#0;class#MainUI#0" expanded="false" />
-            <element signature="method#clientList#0;class#MainUI#0" expanded="false" />
-            <element signature="method#refreshCL#0;class#MainUI#0" expanded="false" />
+            <element signature="method#refreshPL#0;class#MainUI#0" expanded="false" />
             <element signature="method#clientEntry#0;class#MainUI#0" expanded="false" />
             <element signature="method#productsPane#0;class#MainUI#0" expanded="false" />
+            <element signature="method#productTable#0;class#MainUI#0" expanded="false" />
+            <marker date="1494629630575" expanded="false" signature="2476:2495" ph=" { " />
+            <marker date="1494629630575" expanded="false" signature="2522:2536" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/Network/ConnectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#requestClientList#0;class#ConnectionController#0" expanded="false" />
+            <element signature="method#requestProductList#0;class#ConnectionController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/View/FacturaView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="97" column="71" lean-forward="false" selection-start-line="97" selection-start-column="71" selection-end-line="97" selection-end-column="71" />
+          <folding>
+            <element signature="class#4797:6101" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/View/NewClientUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="100" column="52" lean-forward="false" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/View/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="method#addProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#addCompany#0;class#Controller#0" expanded="false" />
+            <element signature="method#importProductList#0;class#Controller#0" expanded="false" />
+            <element signature="method#exportProductList#0;class#Controller#0" expanded="false" />
+            <element signature="method#queryProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#enoughProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#getProduct#1;class#Controller#0" expanded="false" />
+            <element signature="method#removeProduct#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateStocks#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pao/Model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
           </folding>
         </state>
       </provider>

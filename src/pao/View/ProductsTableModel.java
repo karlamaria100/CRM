@@ -1,4 +1,4 @@
-package View;
+package pao.View;
 
 import javax.swing.table.DefaultTableModel;
 
