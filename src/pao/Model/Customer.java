@@ -10,7 +10,7 @@ public class Customer extends Client implements Serializable{
     public Customer(String name, String surname) {
         super();
         this.name = name;
-        this.surname = surname;
+        this.surname = surname ;
         setId(nextId.incrementAndGet());
     }
 
