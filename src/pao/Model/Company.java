@@ -6,13 +6,13 @@ public class Company extends Client implements Serializable{
 
     private String name;
 
-    public Company(String name){
+    public Company(String name, int id){
         super();
         this.name = name;
-        setId(nextId.incrementAndGet());
+        setID(id);
     }
 
-    public String getName() {
+    public String getFullName() {
         return name;
     }
 }

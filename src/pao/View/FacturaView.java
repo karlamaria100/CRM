@@ -54,7 +54,7 @@ public class FacturaView {
         clientNamePane.setBorder(new EmptyBorder(20, 20, 5, 0));
 
         JLabel nameClient = new JLabel("Numele Clientului:");
-        JLabel nameClientSet = new JLabel(c.getName());
+        JLabel nameClientSet = new JLabel(c.getFullName());
 
         clientNamePane.add(nameClient);
         clientNamePane.add(nameClientSet);

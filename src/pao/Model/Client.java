@@ -11,14 +11,14 @@ public class Client implements Serializable {
     static AtomicInteger nextId = new AtomicInteger();
     private int id;
 
-    public String getName(){
+    public String getFullName(){
         return "Null";
     }
     public int getId(){
         return id;
     }
 
-    protected void setId(int id){
+    protected void setID(int id){
         this.id = id;
     }
 

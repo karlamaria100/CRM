@@ -37,7 +37,7 @@ public class RaportUI {
         clientNamePane.setLayout(new FlowLayout(FlowLayout.LEFT));
         clientNamePane.setBorder(new EmptyBorder(20, 20, 5, 0));
 
-        JLabel nameClient = new JLabel("Numele Clientului:" + client.getName());
+        JLabel nameClient = new JLabel("Numele Clientului:" + client.getFullName());
 
 
         clientNamePane.add(nameClient);

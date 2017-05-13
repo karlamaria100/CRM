@@ -150,7 +150,7 @@ public class MainUI {
     private JPanel clientEntry(Client c){
         JPanel client = new JPanel(new GridBagLayout());
 
-        JLabel clientName = new JLabel(c.getName());
+        JLabel clientName = new JLabel(c.getFullName());
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
 
         JLabel clientNumberFacturi = new JLabel(String.valueOf(c.getNumberFacturi()));

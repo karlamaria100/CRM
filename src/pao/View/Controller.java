@@ -13,11 +13,9 @@ public class Controller {
     private MainUI userInterface = new MainUI(this);
 
     public void addCustomer(String nameCustomer, String surnameCustomer){
-        Customer c = new Customer(nameCustomer,surnameCustomer);
+        Customer c = new Customer(nameCustomer,surnameCustomer, 0);
         ConnectionController.getInstance().sendCustomer(c);
         importClientsList();
-        //refreshClientList();
-        //listClients.add(c);
     }
 
     public void addProduct(String nameProduct, String quantityProduct, String priceProduct){
@@ -28,21 +26,15 @@ public class Controller {
 
     public void addCompany(String nameCompany){
 
-        Company c = new Company(nameCompany);
+        Company c = new Company(nameCompany,0);
         ConnectionController.getInstance().sendCompany(c);
         importClientsList();
-        //listClients.add(c);
     }
 
     public void refreshClientList(ArrayList<Client> c ){
         userInterface.refreshCL(c);
     }
 
-    /*
-    public ArrayList<Client> getListCompanies(){
-        return listClients;
-    }
-    */
     public ArrayList<Product> getListProducts(){return listProducts;}
 
     public void importProductList(){
@@ -80,22 +72,6 @@ public class Controller {
         }
 
     }
-
-    /*
-    public void exportClientList(){
-        try {
-            FileOutputStream fileOut = new FileOutputStream("exportClients.txt");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(listClients);
-            out.close();
-            fileOut.close();
-            System.out.printf("Serialized data is saved in exportClients.txt");
-        }catch(IOException i) {
-
-        }
-
-    }
-    */
 
     public void importClientsList(){
 
