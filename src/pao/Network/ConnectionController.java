@@ -1,9 +1,6 @@
 package pao.Network;
 
-import pao.Model.Client;
-import pao.Model.Company;
-import pao.Model.Customer;
-import pao.Model.Product;
+import pao.Model.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -29,7 +26,7 @@ public class ConnectionController {
 
     public ConnectionController() {
         try {
-            socket = new Socket("192.168.1.137", 9998);
+            socket = new Socket("10.240.244.223", 9998);
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             objectOutputStream.flush();
             objectInputStream = new ObjectInputStream(socket.getInputStream());
@@ -69,6 +66,54 @@ public class ConnectionController {
         return arr;
     }
 
+    public Product requestProduct(String nameProduct){
+        Product r = null;
+        try {
+            System.out.println("ajunge");
+            objectOutputStream.writeObject("REQUEST PRODUCT");
+            objectOutputStream.writeObject(nameProduct);
+            r = (Product) objectInputStream.readObject();
+            if(r!=null) { System.out.println(r.getName()); }
+            if(r == null) {
+                System.out.println("e gol");
+            }
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return r;
+    }
+
+    public ArrayList<Factura> requestFacturaList(Client c){
+        ArrayList arr = null;
+        //TODO IMPLEMENT LIST FACTURI
+        return arr;
+    }
+
+    public void deleteProduct(String nameProduct){
+        try {
+            objectOutputStream.writeObject("DELETE PRODUCT ");
+            objectOutputStream.writeObject(nameProduct);
+            System.out.println(objectInputStream.read());
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void sendProduct(Product product){
+        try{
+            objectOutputStream.writeObject("ADD NEW PRODUCT");
+            objectOutputStream.writeObject(product);
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
     public void sendCustomer(Customer customer){
         try {
             objectOutputStream.writeObject("ADD NEW CUSTOMER");
@@ -88,4 +133,16 @@ public class ConnectionController {
             e.printStackTrace();
         }
     }
+
+    public void sendFactura(Factura factura, int idClient){
+        try{
+            objectOutputStream.writeObject("ADD NEW FACTURA");
+            objectOutputStream.writeObject(factura);
+            objectOutputStream.writeObject(idClient);
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
 }

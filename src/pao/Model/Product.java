@@ -9,14 +9,17 @@ public class Product implements Serializable{
 
     //PRODUCT ID CU GRIJA LA FAPTUL CA FACTURA GENEREAZA UN OBIECT NOU.
 
-    String name;
-    double quantity;
-    double price;
 
-    public Product(String name, double quantity, double price) {
+    private int id;
+    private String name;
+    private double quantity;
+    private double price;
+
+    public Product(String name, double quantity, double price, int id) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.id = id;
     }
 
     public String getName() {
@@ -37,6 +40,10 @@ public class Product implements Serializable{
 
     public double getPrice() {
         return price;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setPrice(double price) {

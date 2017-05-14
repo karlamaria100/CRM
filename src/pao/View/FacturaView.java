@@ -88,14 +88,14 @@ public class FacturaView {
                             JLabel p = (JLabel) ((JPanel) component).getComponent(4);
                             double priceProductLocal = Double.parseDouble(p.getText());
                             priceProductLocal = priceProductLocal / q;
-                            noua.add(nameProductLocal, q, priceProductLocal);
+                            noua.add(nameProductLocal, q, priceProductLocal, control.getProduct(nameProductLocal).getId());
 
                         }
                     }
                 }
-                control.updateStocks(noua);
-                c.addFactura(noua);
-                ConnectionController.getInstance().requestClientList();
+                ConnectionController.getInstance().sendFactura(noua, c.getId());
+                control.importClientsList();
+                control.updateStocks();
                 jframe.dispose();
             }
         });
@@ -203,9 +203,8 @@ public class FacturaView {
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
                 }
-                if(control.getProduct(productNameTextField.getText()) == null) {
+                if(control.getProduct(productNameTextField.getText())== null) {
                     valid = false;
-                    //System.out.println(control.getProduct(productNameTextField.getText()).getName());
                     JOptionPane.showMessageDialog(jframe,
                             "Produsul nu exista in ofeta! \n Incercati altceva.",
                             "Eroare validare",

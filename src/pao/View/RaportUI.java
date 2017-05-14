@@ -2,6 +2,7 @@ package pao.View;
 
 import pao.Model.Client;
 import pao.Model.Factura;
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -60,8 +61,8 @@ public class RaportUI {
         facturalist = new JPanel();
         BoxLayout boxlayout = new BoxLayout(facturalist, BoxLayout.Y_AXIS);
         facturalist.setLayout(boxlayout);
-        for(int i = 0; i < client.getNumberFacturi(); i++){
-            facturalist.add(facturaEntry(client.getListFacturi().get(i)));
+        for(int i = 0; i < ConnectionController.getInstance().requestFacturaList(client).size(); i++){
+            facturalist.add(facturaEntry(ConnectionController.getInstance().requestFacturaList(client).get(i)));
         }
 
         return facturalist;

@@ -2,6 +2,7 @@ package pao.View;
 
 import pao.Model.Client;
 import pao.Model.Product;
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -73,17 +74,6 @@ public class MainUI {
         });
         newClient.add(newClientCompanyButton);
 
-        /*
-        JButton exportClientsButton = new JButton("Exportati lista de clienti");
-        exportClientsButton.setEnabled(false);
-        exportClientsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                control.exportClientList();
-            }
-        });
-        newClient.add(exportClientsButton);
-        */
         JButton importClientsButton = new JButton("Importati lista de clienti");
         importClientsButton.addActionListener(new ActionListener() {
             @Override
@@ -142,8 +132,8 @@ public class MainUI {
                 dtm.removeRow(i);
             }
         }
-        for(int i = 0; i < control.getListProducts().size(); i++){
-            productEntry(control.getProduct(i));
+        for(int i = 0; i < ConnectionController.getInstance().requestProductList().size(); i++){
+            productEntry(ConnectionController.getInstance().requestProductList().get(i));
         }
     }
 
@@ -153,7 +143,7 @@ public class MainUI {
         JLabel clientName = new JLabel(c.getFullName());
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
 
-        JLabel clientNumberFacturi = new JLabel(String.valueOf(c.getNumberFacturi()));
+        //JLabel clientNumberFacturi = new JLabel(String.valueOf(0));
 
         JButton newFacturaButton = new JButton("Factura Noua");
         newFacturaButton.addActionListener(new ActionListener() {
@@ -176,8 +166,8 @@ public class MainUI {
         client.add(clientID,gbc);
         gbc.weightx = 0.3;
         client.add(clientName,gbc);
-        gbc.weightx = 0.1;
-        client.add(clientNumberFacturi,gbc);
+        //gbc.weightx = 0.1;
+        //client.add(clientNumberFacturi,gbc);
         gbc.weightx = 0.3;
         client.add(newFacturaButton,gbc);
         client.add(newRaportButton,gbc);
@@ -201,14 +191,6 @@ public class MainUI {
         });
         optionPane.add(newProductButton);
 
-        JButton exportProductListButton = new JButton("Exportati lista de produse");
-        exportProductListButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                control.exportProductList();
-            }
-        });
-
         JButton importProductListButton = new JButton("Importati lista de produse");
         importProductListButton.addActionListener(new ActionListener() {
             @Override
@@ -218,7 +200,6 @@ public class MainUI {
         });
 
         optionPane.add(newProductButton);
-        optionPane.add(exportProductListButton);
         optionPane.add(importProductListButton);
 
         //PRODUCT LIST

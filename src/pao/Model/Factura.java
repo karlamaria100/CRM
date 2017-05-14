@@ -20,8 +20,8 @@ public class Factura implements Serializable{
         return listaProduse.size();
     }
 
-    public void add(String nameProduct, double quantityProduct, double priceProduct){
-        listaProduse.add(new Product(nameProduct, quantityProduct, priceProduct));
+    public void add(String nameProduct, double quantityProduct, double priceProduct, int id){
+        listaProduse.add(new Product(nameProduct, quantityProduct, priceProduct, id));
         System.out.println(toString());
 
     }
@@ -35,6 +35,10 @@ public class Factura implements Serializable{
 
     public int getID(){
         return id;
+    }
+
+    public void setID(int id){
+        this.id = id;
     }
 
     public double getTotalFactura(){

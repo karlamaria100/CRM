@@ -105,9 +105,9 @@ public class ProductUI {
                 jframe.dispose();
             }
         });
-        JButton clearButton = new JButton("Clear");
+        //JButton clearButton = new JButton("Clear");
 
-        operationButtons.add(clearButton);
+        //operationButtons.add(clearButton);
         operationButtons.add(saveButton);
 
         productForm.add(operationButtons, BorderLayout.SOUTH);
