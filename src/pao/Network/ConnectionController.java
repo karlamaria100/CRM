@@ -8,9 +8,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-/**
- * Created by rares on 12-May-17.
- */
+
 public class ConnectionController {
 
     Socket socket;
@@ -26,7 +24,7 @@ public class ConnectionController {
 
     public ConnectionController() {
         try {
-            socket = new Socket("10.240.244.223", 9998);
+            socket = new Socket("192.168.1.137", 9998);
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             objectOutputStream.flush();
             objectInputStream = new ObjectInputStream(socket.getInputStream());
@@ -88,8 +86,18 @@ public class ConnectionController {
     }
 
     public ArrayList<Factura> requestFacturaList(Client c){
-        ArrayList arr = null;
-        //TODO IMPLEMENT LIST FACTURI
+        ArrayList<Factura> arr = null;
+        try{
+            objectOutputStream.writeObject("REQUEST CLIENT RAPORT");
+            objectOutputStream.writeObject(c.getId());
+            arr = (ArrayList<Factura>) objectInputStream.readObject();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+        catch(ClassNotFoundException cl){
+            cl.printStackTrace();
+        }
         return arr;
     }
 
@@ -143,6 +151,71 @@ public class ConnectionController {
         catch(IOException e){
             e.printStackTrace();
         }
+    }
+
+    public void modifyProduct(int id, double stock, double price){
+        try{
+            objectOutputStream.writeObject("MODIFY PRODUCT");
+            objectOutputStream.writeObject(id);
+            objectOutputStream.writeObject(stock);
+            objectOutputStream.writeObject(price);
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void removeProduct(int id){
+        try{
+            System.out.println("Intra");
+            objectOutputStream.writeObject("REMOVE PRODUCT");
+            objectOutputStream.flush();
+            objectOutputStream.writeObject(id);
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void editClient(int id, String name){
+        try{
+            objectOutputStream.writeObject("EDIT CLIENT");
+            objectOutputStream.writeObject(id);
+            objectOutputStream.writeObject(name);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void editClient(int id, String name, String surname){
+        try{
+            objectOutputStream.writeObject("EDIT CLIENT");
+            objectOutputStream.writeObject(id);
+            objectOutputStream.writeObject(name);
+            objectOutputStream.writeObject(surname);
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Sale> requestProductRaport(int id){
+        ArrayList<Sale> arr = null;
+        try{
+            objectOutputStream.writeObject("RAPORT PRODUCT");
+            objectOutputStream.writeObject(id);
+            arr = (ArrayList<Sale>) objectInputStream.readObject();
+            //TODO ARRAY CARE PRIMESTE RAPORTUL
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return arr;
     }
 
 }

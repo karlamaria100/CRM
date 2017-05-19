@@ -8,15 +8,19 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.util.ArrayList;
 
 
-public class RaportUI {
+public class RaportClient {
     private JFrame jframe;
-    private Client client;
+    //private Client client;
     private JPanel facturalist;
+    ArrayList<Factura> listaFacturi;
+    String clientName = " ";
 
-    RaportUI(Client c){
-        this.client = c;
+    RaportClient(ArrayList<Factura> l, String nameClient){
+        listaFacturi = l;
+        this.clientName = nameClient;
         startWindow();
     }
 
@@ -38,7 +42,7 @@ public class RaportUI {
         clientNamePane.setLayout(new FlowLayout(FlowLayout.LEFT));
         clientNamePane.setBorder(new EmptyBorder(20, 20, 5, 0));
 
-        JLabel nameClient = new JLabel("Numele Clientului:" + client.getFullName());
+        JLabel nameClient = new JLabel("Numele Clientului:" + clientName);
 
 
         clientNamePane.add(nameClient);
@@ -61,8 +65,8 @@ public class RaportUI {
         facturalist = new JPanel();
         BoxLayout boxlayout = new BoxLayout(facturalist, BoxLayout.Y_AXIS);
         facturalist.setLayout(boxlayout);
-        for(int i = 0; i < ConnectionController.getInstance().requestFacturaList(client).size(); i++){
-            facturalist.add(facturaEntry(ConnectionController.getInstance().requestFacturaList(client).get(i)));
+        for(int i = 0; i < listaFacturi.size(); i++){
+            facturalist.add(facturaEntry(listaFacturi.get(i)));
         }
 
         return facturalist;
@@ -109,8 +113,6 @@ public class RaportUI {
         gbc.gridx = 2;
         JLabel totalText = new JLabel("Total = ");
         facturaPane.add(totalText,gbc);
-
-
 
         return facturaPane;
 

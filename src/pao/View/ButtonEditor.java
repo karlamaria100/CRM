@@ -1,7 +1,6 @@
 package pao.View;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,14 +14,12 @@ class ButtonEditor extends DefaultCellEditor {
     private String label;
 
     private boolean isPushed;
+    MainUI userinterface;
+    int row;
+    int column;
+    String option;
 
-    private Controller control;
-
-    private DefaultTableModel dtm;
-
-    private MainUI userinterface;
-
-    public ButtonEditor(JCheckBox checkBox,Controller control,DefaultTableModel dtm, MainUI userinterface) {
+    public ButtonEditor(JCheckBox checkBox, MainUI userinterface, String option) {
         super(checkBox);
         button = new JButton();
         button.setOpaque(true);
@@ -31,13 +28,14 @@ class ButtonEditor extends DefaultCellEditor {
                 fireEditingStopped();
             }
         });
-        this.control = control;
-        this.dtm = dtm;
         this.userinterface = userinterface;
+        this.option = option;
     }
 
     public Component getTableCellEditorComponent(JTable table, Object value,
                                                  boolean isSelected, int row, int column) {
+        this.row = row;
+        this.column = column;
         if (isSelected) {
             button.setForeground(table.getSelectionForeground());
             button.setBackground(table.getSelectionBackground());
@@ -53,8 +51,19 @@ class ButtonEditor extends DefaultCellEditor {
 
     public Object getCellEditorValue() {
         if (isPushed) {
-            //userinterface.dtm.removeRow(userinterface.table.getSelectedRow());
-            JOptionPane.showMessageDialog(button, label + ": Ouch!");
+            //
+            //
+            if(option.equals("raport")){
+                userinterface.raportProduct(row);
+            }
+            if(option.equals("edit")){
+                userinterface.modifyProduct(row);
+            }
+            if(option.equals("remove")){
+                userinterface.removeProduct(row);
+            }
+            //JOptionPane.showMessageDialog(button, label + ": Ouch!" + row + " " + column);
+            // System.out.println(label + ": Ouch!");
         }
         isPushed = false;
         return new String(label);

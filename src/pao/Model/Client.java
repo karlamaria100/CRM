@@ -10,6 +10,10 @@ public class Client implements Serializable {
     private int id;
     private int numberFacturi;
 
+    public static int generateID(){
+        return 0;
+    }
+
     public String getFullName(){
         return "Null";
     }

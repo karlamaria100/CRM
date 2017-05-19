@@ -3,8 +3,6 @@ package pao.View;
 import pao.Model.*;
 import pao.Network.ConnectionController;
 
-import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Controller {
@@ -16,8 +14,8 @@ public class Controller {
         importClientsList();
     }
 
-    public void addProduct(String nameProduct, String quantityProduct, String priceProduct){
-        Product p = new Product(nameProduct, Double.parseDouble(quantityProduct), Double.parseDouble(priceProduct), 0);
+    public void addProduct(String nameProduct, String quantityProduct, String priceProduct, boolean service){
+        Product p = new Product(nameProduct, Double.parseDouble(quantityProduct), Double.parseDouble(priceProduct), 0, service);
         ConnectionController.getInstance().sendProduct(p);
         importProductList();
     }
@@ -55,12 +53,47 @@ public class Controller {
         return ConnectionController.getInstance().requestProduct(nameProduct);
     }
 
-    public void removeProduct(Product p){
-        ConnectionController.getInstance().deleteProduct(p.getName());
+    public void removeProduct(int id){
+        ConnectionController.getInstance().removeProduct(id);
+        userInterface.refreshPL();
     }
 
-    public void updateStocks(){
-        // TODO STUFF
+    public void modifyProduct(int id, double stock, double price){
+        ConnectionController.getInstance().modifyProduct(id, stock, price);
+        userInterface.refreshPL();
+    }
+
+    public void requestRaportClient(Client c){
+        RaportClient ri = new RaportClient(ConnectionController.getInstance().requestFacturaList(c), c.getFullName());
+    }
+
+    public boolean checkProductExistance(String nameProduct){
+        if(ConnectionController.getInstance().requestProduct(nameProduct) == null){
+            return true;
+        }
+        return false;
+    }
+
+    public void editClient(Client client){
+        if(Company.isCompany(client.getId())) {
+            ClientEditUI ci = new ClientEditUI(2, this, userInterface, client);
+        }
+        else {
+            ClientEditUI ci = new ClientEditUI(1, this, userInterface, client);
+        }
+
+    }
+    public void editClient(int id, String name){
+        ConnectionController.getInstance().editClient(id, name);
+        importClientsList();
+    }
+    public void editClient(int id, String name, String surname){
+        ConnectionController.getInstance().editClient(id, name, surname);
+        importClientsList();
+    }
+
+    public void raportProduct(int id, String nameProduct){
+        RaportProdus rp = new RaportProdus(ConnectionController.getInstance().requestProductRaport(id), nameProduct);
         userInterface.refreshPL();
     }
 

@@ -7,17 +7,29 @@ import java.io.Serializable;
  */
 public class Product implements Serializable{
 
-    //PRODUCT ID CU GRIJA LA FAPTUL CA FACTURA GENEREAZA UN OBIECT NOU.
-
-
     private int id;
     private String name;
     private double quantity;
     private double price;
+    transient private static final int minID = 4000;
+    transient private static final int maxID = 5000;
+    private boolean services;
 
-    public Product(String name, double quantity, double price, int id) {
+    public static int generateID(){
+        int range = (maxID - minID) + 1;
+        return (int)(Math.random() * range) + minID;
+    }
+
+    public Product(String name, double quantity, double price, int id, boolean services) {
         this.name = name;
         this.quantity = quantity;
+        this.price = price;
+        this.id = id;
+        this.services = services;
+    }
+
+    public Product(String name, double price, int id) {
+        this.name = name;
         this.price = price;
         this.id = id;
     }
@@ -48,6 +60,10 @@ public class Product implements Serializable{
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isServices() {
+        return services;
     }
 
     @Override

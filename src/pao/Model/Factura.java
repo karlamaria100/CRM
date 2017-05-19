@@ -8,7 +8,10 @@ import java.util.ArrayList;
  */
 public class Factura implements Serializable{
 
-    private int id = 0; //TODO Implement ID Factura
+    private int id = 0;
+
+    transient private static final int minID = 3000;
+    transient private static final int maxID = 4000;
 
     ArrayList<Product> listaProduse = new ArrayList<Product>();
 
@@ -20,8 +23,19 @@ public class Factura implements Serializable{
         return listaProduse.size();
     }
 
-    public void add(String nameProduct, double quantityProduct, double priceProduct, int id){
-        listaProduse.add(new Product(nameProduct, quantityProduct, priceProduct, id));
+    public void add(String nameProduct, double quantityProduct, double priceProduct, int id, boolean service){
+        listaProduse.add(new Product(nameProduct, quantityProduct, priceProduct, id, service));
+        System.out.println(toString());
+
+    }
+
+    public static int generateID(){
+        int range = (maxID - minID) + 1;
+        return (int)(Math.random() * range) + minID;
+    }
+
+    public void add(String nameProduct, double priceProduct, int id){
+        listaProduse.add(new Product(nameProduct, priceProduct, id));
         System.out.println(toString());
 
     }

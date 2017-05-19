@@ -1,20 +1,26 @@
 package pao.View;
 
+import pao.Model.Client;
 import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class NewClientUI {
-
+/**
+ * Created by rares on 18-May-17.
+ */
+public class ClientEditUI {
     private int type;
     private Controller control;
     private MainUI mainUI;
+    private Client c;
 
-    NewClientUI(int type, Controller control, MainUI ui) {
+    ClientEditUI(int type, Controller control, MainUI ui, Client c) {
 
+        this.c = c;
         this.mainUI = ui;
         this.type = type;
         this.control = control;
@@ -23,10 +29,10 @@ public class NewClientUI {
 
 
 
-        private JFrame jframe;
+    private JFrame jframe;
 
     private void startWindow() {
-        jframe = new JFrame("Client Nou");
+        jframe = new JFrame("Editare Client");
         jframe.setPreferredSize(new Dimension(400, 300));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -40,7 +46,7 @@ public class NewClientUI {
         JPanel clientForm = new JPanel(new BorderLayout());
 
         //WINDOW TITLE
-        JLabel newClientText = new JLabel("Adaugati Client Nou");
+        JLabel newClientText = new JLabel("Editati Clientul");
         newClientText.setBorder(new EmptyBorder(20, 20, 10, 20));
         clientForm.add(newClientText, BorderLayout.NORTH);
 
@@ -102,13 +108,11 @@ public class NewClientUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(type == 2 && !nameCompanyTextField.getText().equals("")) {
-                    control.addCompany(nameCompanyTextField.getText());
+                    control.editClient(c.getId(), nameCompanyTextField.getText());
                 }
-                else{
-                    if(!namePersonTextField.getText().equals("") && !surnamePersonTextField.getText().equals(""))
-                    control.addCustomer(namePersonTextField.getText(), surnamePersonTextField.getText());
+                else if(!namePersonTextField.getText().equals("") && !surnamePersonTextField.getText().equals("")){
+                    control.editClient(c.getId(), namePersonTextField.getText(), surnamePersonTextField.getText());
                 }
-                ConnectionController.getInstance().requestClientList();
                 jframe.dispose();
             }
         });
@@ -117,6 +121,4 @@ public class NewClientUI {
 
         return clientForm;
     }
-
-
 }

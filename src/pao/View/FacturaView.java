@@ -88,14 +88,13 @@ public class FacturaView {
                             JLabel p = (JLabel) ((JPanel) component).getComponent(4);
                             double priceProductLocal = Double.parseDouble(p.getText());
                             priceProductLocal = priceProductLocal / q;
-                            noua.add(nameProductLocal, q, priceProductLocal, control.getProduct(nameProductLocal).getId());
+                            noua.add(nameProductLocal, q, priceProductLocal, control.getProduct(nameProductLocal).getId(), control.getProduct(nameProductLocal).isServices());
 
                         }
                     }
                 }
                 ConnectionController.getInstance().sendFactura(noua, c.getId());
                 control.importClientsList();
-                control.updateStocks();
                 jframe.dispose();
             }
         });

@@ -138,12 +138,12 @@ public class MainUI {
     }
 
     private JPanel clientEntry(Client c){
-        JPanel client = new JPanel(new GridBagLayout());
+        JPanel client = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         JLabel clientName = new JLabel(c.getFullName());
+        clientName.setPreferredSize(new Dimension(110,20));
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
-
-        //JLabel clientNumberFacturi = new JLabel(String.valueOf(0));
+        clientID.setPreferredSize(new Dimension(20, 20));
 
         JButton newFacturaButton = new JButton("Factura Noua");
         newFacturaButton.addActionListener(new ActionListener() {
@@ -157,20 +157,28 @@ public class MainUI {
         newRaportButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RaportUI r = new RaportUI(c);
+                control.requestRaportClient(c);
             }
         });
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.weightx = 0.1;
-        client.add(clientID,gbc);
-        gbc.weightx = 0.3;
-        client.add(clientName,gbc);
+        JButton newEditButton = new JButton("Edit");
+        newEditButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                control.editClient(c);
+            }
+        });
+        //GridBagConstraints gbc = new GridBagConstraints();
         //gbc.weightx = 0.1;
-        //client.add(clientNumberFacturi,gbc);
-        gbc.weightx = 0.3;
-        client.add(newFacturaButton,gbc);
-        client.add(newRaportButton,gbc);
+        //gbc.ipadx = 20;
+        client.add(clientID);
+        //gbc.weightx = 0.3;
+        //gbc.ipadx = 300;
+        client.add(clientName);
+        //gbc.weightx = 0.3;
+        //gbc.ipadx = 150;
+        client.add(newFacturaButton);
+        client.add(newRaportButton);
+        client.add(newEditButton);
 
         return client;
     }
@@ -225,18 +233,41 @@ public class MainUI {
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         dtm = new ProductsTableModel(0, 0);
-        String header[] = new String[] {"Nr. Crt", "Nume Produs", "Stoc", "Pret Unitate", "Editare" };
+        String header[] = new String[] {"Nr. Crt", "ID Produs", "Nume Produs", "Stoc", "Pret Unitate", "Editare", "Stergere", "Raport"};
         dtm.setColumnIdentifiers(header);
         table.setModel(dtm);
 
+
         table.getColumn("Editare").setCellRenderer(new ButtonRenderer());
-        table.getColumn("Editare").setCellEditor(new ButtonEditor(new JCheckBox(),control,dtm,this));
+        table.getColumn("Editare").setCellEditor(new ButtonEditor(new JCheckBox(), this, "edit"));
+
+        table.getColumn("Stergere").setCellRenderer(new ButtonRenderer());
+        table.getColumn("Stergere").setCellEditor(new ButtonEditor(new JCheckBox(),this, "remove"));
+
+        table.getColumn("Raport").setCellRenderer(new ButtonRenderer());
+        table.getColumn("Raport").setCellEditor(new ButtonEditor(new JCheckBox(),this, "raport"));
 
         return table;
     }
 
+    public void modifyProduct(int rowNumber){
+        ChangeProduct cp = new ChangeProduct(control, (int) table.getModel().getValueAt(rowNumber, 1),
+                (String) table.getModel().getValueAt(rowNumber, 2),
+                (double) table.getModel().getValueAt(rowNumber, 3),
+                (double) table.getModel().getValueAt(rowNumber, 4));
+    }
+
+    public void removeProduct(int rowNumber){
+        control.removeProduct((int) table.getModel().getValueAt(rowNumber, 1));
+    }
+
+    public void raportProduct(int rowNumber){
+        control.raportProduct((int) table.getModel().getValueAt(rowNumber, 1),
+                (String) table.getModel().getValueAt(rowNumber, 2));
+    }
+
     public void productEntry(Product p){
-        Object[] o = new Object[] {dtm.getRowCount(), p.getName(), p.getQuantity(), p.getPrice(), "Delete"};
+        Object[] o = new Object[] {dtm.getRowCount(), p.getId(), p.getName(), p.getQuantity(), p.getPrice(), "Edit", "Delete", "Raport"};
         dtm.addRow(o);
         table.revalidate();
     }
