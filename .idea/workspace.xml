@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4650656f-2100-4182-8536-8a40174e6952" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_42.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CRM.iml" afterPath="$PROJECT_DIR$/CRM.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pao/Network/ConnectionController.java" afterPath="$PROJECT_DIR$/src/pao/Network/ConnectionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pao/View/Controller.java" afterPath="$PROJECT_DIR$/src/pao/View/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pao/View/MainUI.java" afterPath="$PROJECT_DIR$/src/pao/View/MainUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pao/View/ProductUI.java" afterPath="$PROJECT_DIR$/src/pao/View/ProductUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +51,8 @@
       <file leaf-file-name="ProductUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pao/View/ProductUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="109" column="46" lean-forward="true" selection-start-line="109" selection-start-column="46" selection-end-line="109" selection-end-column="46" />
+            <state relative-caret-position="339">
+              <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -206,6 +200,7 @@
     </option>
     <push-targets>
       <push-target-info target-remote="origin" target-branch="Rares_Table_ServerReady" repo="$PROJECT_DIR$" source="Rares_Table" />
+      <push-target-info target-remote="origin" target-branch="Server+Client" repo="$PROJECT_DIR$" source="Rares_Table_ServerReady" />
     </push-targets>
   </component>
   <component name="GradleLocalSettings">
@@ -952,7 +947,7 @@
       <workItem from="1491236506862" duration="8873000" />
       <workItem from="1495384872375" duration="2317000" />
       <workItem from="1495388569473" duration="1832000" />
-      <workItem from="1495393023967" duration="3171000" />
+      <workItem from="1495393023967" duration="3276000" />
     </task>
     <task id="LOCAL-00001" summary="Added Customer Class">
       <created>1491236779548</created>
@@ -1003,11 +998,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494782906221</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Imbinat Client cu Server ... cred">
+      <created>1495399495392</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1495399495392</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20725000" />
+    <option name="totallyTimeSpent" value="20830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1099,7 +1101,8 @@
     <MESSAGE value="Am modificat ce vedeam in Produse cu un Tabel. Nu am reusit sa il implementez complet, mai am de lucru." />
     <MESSAGE value="Adaptare pentru Server" />
     <MESSAGE value="O zi productiva!" />
-    <option name="LAST_COMMIT_MESSAGE" value="O zi productiva!" />
+    <MESSAGE value="Imbinat Client cu Server ... cred" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imbinat Client cu Server ... cred" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1505,8 +1508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pao/View/ProductUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="109" column="46" lean-forward="true" selection-start-line="109" selection-start-column="46" selection-end-line="109" selection-end-column="46" />
+        <state relative-caret-position="339">
+          <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
           <folding />
         </state>
       </provider>
