@@ -8,6 +8,10 @@ import java.util.ArrayList;
 public class Controller {
     private MainUI userInterface = new MainUI(this);
 
+    public Controller(){
+        ConnectionController.getInstance();
+    }
+
     public void addCustomer(String nameCustomer, String surnameCustomer){
         Customer c = new Customer(nameCustomer,surnameCustomer, 0);
         ConnectionController.getInstance().sendCustomer(c);

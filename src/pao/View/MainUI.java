@@ -143,7 +143,7 @@ public class MainUI {
         JLabel clientName = new JLabel(c.getFullName());
         clientName.setPreferredSize(new Dimension(110,20));
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
-        clientID.setPreferredSize(new Dimension(20, 20));
+        clientID.setPreferredSize(new Dimension(50, 20));
 
         JButton newFacturaButton = new JButton("Factura Noua");
         newFacturaButton.addActionListener(new ActionListener() {

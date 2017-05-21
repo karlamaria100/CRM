@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by Rares on 4/1/2017.
@@ -14,11 +15,13 @@ public class ProductUI {
     private JFrame jframe;
     Controller control;
     MainUI mainUI;
+    boolean type = false;
 
     ProductUI(Controller control, MainUI ui){
         this.control = control;
         this.mainUI = ui;
         startWindow();
+
     }
 
     private void startWindow() {
@@ -88,11 +91,37 @@ public class ProductUI {
         pricePane.add(productPriceTextField);
         pricePane.add(productRON);
 
+
+
+        // PRODUCT OR SERVICE PANE
+
+        JPanel servicePane = new JPanel(new FlowLayout());
+
+        JRadioButton serviceButton = new JRadioButton("Serviciu");
+        serviceButton.setMnemonic(KeyEvent.VK_B);
+        serviceButton.setActionCommand("Serviciu");
+        serviceButton.setSelected(true);
+
+        JRadioButton productButton = new JRadioButton("Produs");
+        productButton.setMnemonic(KeyEvent.VK_B);
+        productButton.setActionCommand("Produs");
+        productButton.setSelected(true);
+
+        ButtonGroup group = new ButtonGroup();
+        group.add(serviceButton);
+        group.add(productButton);
+
+        servicePane.add(serviceButton);
+        servicePane.add(productButton);
+
         form.add(nameProductPane);
         form.add(productQuantityPane);
         form.add(pricePane);
+        form.add(servicePane);
 
         productForm.add(form, BorderLayout.CENTER);
+
+
 
         //CLEAR AND SAVE BUTTONS
         JPanel operationButtons = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -102,7 +131,7 @@ public class ProductUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(control.checkProductExistance(nameProductTextField.getText())) {
-                    //control.addProduct(nameProductTextField.getText(), productQuantityTextField.getText(), productPriceTextField.getText());
+                    control.addProduct(nameProductTextField.getText(), productQuantityTextField.getText(), productPriceTextField.getText(), type);
                 }
                 jframe.dispose();
             }
