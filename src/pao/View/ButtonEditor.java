@@ -51,8 +51,7 @@ class ButtonEditor extends DefaultCellEditor {
 
     public Object getCellEditorValue() {
         if (isPushed) {
-            //
-            //
+
             if(option.equals("raport")){
                 userinterface.raportProduct(row);
             }
@@ -62,11 +61,9 @@ class ButtonEditor extends DefaultCellEditor {
             if(option.equals("remove")){
                 userinterface.removeProduct(row);
             }
-            //JOptionPane.showMessageDialog(button, label + ": Ouch!" + row + " " + column);
-            // System.out.println(label + ": Ouch!");
         }
         isPushed = false;
-        return new String(label);
+        return label;
     }
 
     public boolean stopCellEditing() {

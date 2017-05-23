@@ -17,6 +17,7 @@ public class Client implements Serializable {
     public String getFullName(){
         return "Null";
     }
+
     public int getId(){
         return id;
     }

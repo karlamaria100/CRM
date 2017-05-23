@@ -21,7 +21,7 @@ public interface DatabaseData {
     public static final String selectProduseFacturi = "SELECT * FROM crm.produsedinfacturi WHERE idFactura = ?";
     public static final String updateProduct = "UPDATE crm.produse SET stock = stock + ?, pret = ? WHERE idProduse = ?" ;
     public static final String updateCompany = "UPDATE crm.persoana_juridica SET nume = ? WHERE idpersoana_juridica = ?" ;
-    public static final String updateCustomer = "UPDATE crm.persoana_fizica SET nume = ?, surname = ?  WHERE idpersoana_fizica = ?" ;
+    public static final String updateCustomer = "UPDATE crm.persoana_fizica SET nume = ?, prenume = ?  WHERE idpersoana_fizica = ?" ;
     public static final String deleteProduct = "DELETE FROM crm.produse WHERE idProduse = ?";
     public static final String insertSale = "INSERT INTO crm.sales (`idProdus`, `stock`, `pret`, `cumparator`) VALUES (?, ?, ?, ?)";
     public static final String selectSale = "SELECT * FROM crm.sales WHERE idProdus = ?";

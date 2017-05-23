@@ -22,7 +22,6 @@ public class MainUI {
     JTable table;
     DefaultTableModel dtm;
 
-
     MainUI(Controller control){
 
         this.control = control;
@@ -74,7 +73,7 @@ public class MainUI {
         });
         newClient.add(newClientCompanyButton);
 
-        JButton importClientsButton = new JButton("Importati lista de clienti");
+        JButton importClientsButton = new JButton("Refresh Clientlist");
         importClientsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -142,6 +141,7 @@ public class MainUI {
 
         JLabel clientName = new JLabel(c.getFullName());
         clientName.setPreferredSize(new Dimension(110,20));
+
         JLabel clientID = new JLabel(Integer.toString(c.getId()));
         clientID.setPreferredSize(new Dimension(50, 20));
 
@@ -167,15 +167,9 @@ public class MainUI {
                 control.editClient(c);
             }
         });
-        //GridBagConstraints gbc = new GridBagConstraints();
-        //gbc.weightx = 0.1;
-        //gbc.ipadx = 20;
+
         client.add(clientID);
-        //gbc.weightx = 0.3;
-        //gbc.ipadx = 300;
         client.add(clientName);
-        //gbc.weightx = 0.3;
-        //gbc.ipadx = 150;
         client.add(newFacturaButton);
         client.add(newRaportButton);
         client.add(newEditButton);
