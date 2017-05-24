@@ -6,6 +6,7 @@ import pao.Network.ConnectionController;
 import java.util.ArrayList;
 
 public class Controller {
+
     private MainUI userInterface = new MainUI(this);
 
     public Controller(){
@@ -35,7 +36,7 @@ public class Controller {
         userInterface.refreshCL(c);
     }
 
-    public void refreshProductList(ArrayList<Product> p) {userInterface.refreshPL();}
+    public void refreshProductList(ArrayList<Product> p) {userInterface.refreshPL(p);}
 
     public void importProductList(){
         refreshProductList(ConnectionController.getInstance().requestProductList());
@@ -59,12 +60,12 @@ public class Controller {
 
     public void removeProduct(int id){
         ConnectionController.getInstance().removeProduct(id);
-        userInterface.refreshPL();
+        importProductList();
     }
 
     public void modifyProduct(int id, double stock, double price){
         ConnectionController.getInstance().modifyProduct(id, stock, price);
-        userInterface.refreshPL();
+        importProductList();
     }
 
     public void requestRaportClient(Client c){
@@ -80,6 +81,8 @@ public class Controller {
 
     public void editClient(Client client){
         if(Company.isCompany(client.getId())) {
+
+            System.out.println(Company.isCompany(client.getId()));
             ClientEditUI ci = new ClientEditUI(2, this, userInterface, client);
         }
         else {
@@ -98,7 +101,7 @@ public class Controller {
 
     public void raportProduct(int id, String nameProduct){
         RaportProdus rp = new RaportProdus(ConnectionController.getInstance().requestProductRaport(id), nameProduct);
-        userInterface.refreshPL();
+        importProductList();
     }
 
 }

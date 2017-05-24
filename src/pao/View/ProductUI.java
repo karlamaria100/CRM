@@ -3,9 +3,7 @@ package pao.View;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 
 /**
  * Created by Rares on 4/1/2017.
@@ -26,7 +24,7 @@ public class ProductUI {
 
     private void startWindow() {
         jframe = new JFrame("Produs Nou");
-        jframe.setPreferredSize(new Dimension(400, 300));
+        jframe.setPreferredSize(new Dimension(400, 450));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jframe.add(productForm());
@@ -97,22 +95,17 @@ public class ProductUI {
 
         JPanel servicePane = new JPanel(new FlowLayout());
 
-        JRadioButton serviceButton = new JRadioButton("Serviciu");
-        serviceButton.setMnemonic(KeyEvent.VK_B);
-        serviceButton.setActionCommand("Serviciu");
-        serviceButton.setSelected(true);
+        servicePane.add(new JLabel("Serviciu:"));
+        final JCheckBox chkService = new JCheckBox("Serviciu");
 
-        JRadioButton productButton = new JRadioButton("Produs");
-        productButton.setMnemonic(KeyEvent.VK_B);
-        productButton.setActionCommand("Produs");
-        productButton.setSelected(true);
+        chkService.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                type = true;
+            }
+        });
 
-        ButtonGroup group = new ButtonGroup();
-        group.add(serviceButton);
-        group.add(productButton);
-
-        servicePane.add(serviceButton);
-        servicePane.add(productButton);
+        servicePane.add(chkService);
 
         form.add(nameProductPane);
         form.add(productQuantityPane);
@@ -130,10 +123,40 @@ public class ProductUI {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(control.checkProductExistance(nameProductTextField.getText())) {
-                    control.addProduct(nameProductTextField.getText(), productQuantityTextField.getText(), productPriceTextField.getText(), type);
+                boolean valid = true;
+                if(nameProductTextField.getText().equals("")){
+                    valid = false;
+                    JOptionPane.showMessageDialog(jframe,
+                            "Campul Numele Produsului invalid",
+                            "Eroare validare",
+                            JOptionPane.ERROR_MESSAGE);
                 }
-                jframe.dispose();
+                if(!type && productQuantityTextField.getText().equals("")){
+                    valid = false;
+                    JOptionPane.showMessageDialog(jframe,
+                            "Campul Cantitate invalid",
+                            "Eroare validare",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                if(productPriceTextField.getText().equals("")) {
+                    valid = false;
+                    JOptionPane.showMessageDialog(jframe,
+                            "In viata nimic nu este gratis.",
+                            "Eroare validare",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+                if(valid) {
+                    if (control.checkProductExistance(nameProductTextField.getText())) {
+                        if(type == true){
+                            control.addProduct(nameProductTextField.getText(), "0.0", productPriceTextField.getText(), type);
+                        }
+                        else {
+                            control.addProduct(nameProductTextField.getText(), productQuantityTextField.getText(), productPriceTextField.getText(), type);
+                        }
+                        jframe.dispose();
+                    }
+                }
+
             }
         });
         operationButtons.add(saveButton);

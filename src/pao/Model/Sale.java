@@ -1,5 +1,4 @@
 package pao.Model;
-
 import java.io.Serializable;
 
 public class Sale implements Serializable{

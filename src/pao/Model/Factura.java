@@ -19,6 +19,8 @@ public class Factura implements Serializable{
         return listaProduse;
     }
 
+
+
     public int getNumberProducts(){
         return listaProduse.size();
     }
@@ -42,9 +44,10 @@ public class Factura implements Serializable{
 
     @Override
     public String toString() {
-        return "Factura{" +
+        /*return "Factura{" +
                 "listaProduse=" + listaProduse +
-                '}';
+                '}';*/
+        return "Factura " + id;
     }
 
     public int getID(){

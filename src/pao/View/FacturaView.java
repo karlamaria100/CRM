@@ -220,8 +220,8 @@ public class FacturaView {
                     }
                 }
                 if(valid) {
-                    JButton removeButton = new JButton("Sterge");
-                    product.add(removeButton);
+                    //JButton removeButton = new JButton("Sterge");
+                    //product.add(removeButton);
                     productNameTextField.setEditable(false);
                     productQuantityTextField.setEditable(false);
                     totalFactura.setText(String.valueOf(Double.parseDouble(totalFactura.getText()) + Double.parseDouble(productQuantityTextField.getText()) * control.getProduct(productNameTextField.getText()).getPrice()));

@@ -1,7 +1,9 @@
 package pao.Network;
 
 import pao.Model.*;
+import pao.View.DialogsViews;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -24,7 +26,7 @@ public class ConnectionController {
 
     public ConnectionController() {
         try {
-            socket = new Socket("127.0.0.1", 9998);
+            socket = new Socket("10.240.87.153", 9998);
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             objectOutputStream.flush();
             objectOutputStream.writeObject("Hello");
@@ -47,9 +49,15 @@ public class ConnectionController {
             objectOutputStream.writeObject("REQUEST CLIENT LIST");
             arr = (ArrayList<Client>) objectInputStream.readObject();
         }
-        catch(Exception e){
+        catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
+            e.printStackTrace();
+
+        }
+        catch (ClassNotFoundException e){
             e.printStackTrace();
         }
+
         return arr;
     }
 
@@ -60,6 +68,7 @@ public class ConnectionController {
             arr = (ArrayList<Product>) objectInputStream.readObject();
         }
         catch(Exception e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
         return arr;
@@ -78,6 +87,7 @@ public class ConnectionController {
             }
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
         catch(ClassNotFoundException e){
@@ -94,6 +104,7 @@ public class ConnectionController {
             arr = (ArrayList<Factura>) objectInputStream.readObject();
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
         catch(ClassNotFoundException cl){
@@ -109,6 +120,7 @@ public class ConnectionController {
             System.out.println(objectInputStream.read());
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -119,6 +131,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(product);
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -129,6 +142,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(customer);
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -139,6 +153,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(company);
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -150,6 +165,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(idClient);
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -162,6 +178,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(price);
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -175,6 +192,7 @@ public class ConnectionController {
 
         }
         catch (Exception e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -186,6 +204,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(name);
         }
         catch (IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -198,6 +217,7 @@ public class ConnectionController {
             objectOutputStream.writeObject(surname);
         }
         catch(IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
     }
@@ -211,6 +231,7 @@ public class ConnectionController {
             //TODO ARRAY CARE PRIMESTE RAPORTUL
         }
         catch (IOException e){
+            DialogsViews.getInstance().connectionErrorDialog();
             e.printStackTrace();
         }
         catch (ClassNotFoundException e){

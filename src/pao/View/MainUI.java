@@ -52,7 +52,7 @@ public class MainUI {
 
         //ADD CLIENT
 
-        JPanel newClient = new JPanel();
+        JPanel newClient = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JButton newClientPersonButton = new JButton("Adaugati Persoana Fizica");
         newClientPersonButton.setEnabled(false);
         newClientPersonButton.addActionListener(new ActionListener() {
@@ -73,7 +73,7 @@ public class MainUI {
         });
         newClient.add(newClientCompanyButton);
 
-        JButton importClientsButton = new JButton("Refresh Clientlist");
+        JButton importClientsButton = new JButton("Refresh Lista Clienti");
         importClientsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -117,7 +117,6 @@ public class MainUI {
     }
 
     public void refreshCL(ArrayList<Client> listClients){
-        //ArrayList<Client> listClients = control.getListCompanies();
         clientList.removeAll();
         for(int i = 0; i < listClients.size(); i++){
             clientList.add(clientEntry(listClients.get(i)));
@@ -125,14 +124,14 @@ public class MainUI {
         clientList.revalidate();
     }
 
-    public void refreshPL(){
+    public void refreshPL(ArrayList<Product> p){
         if (dtm.getRowCount() > 0) {
             for (int i = dtm.getRowCount() - 1; i > -1; i--) {
                 dtm.removeRow(i);
             }
         }
-        for(int i = 0; i < ConnectionController.getInstance().requestProductList().size(); i++){
-            productEntry(ConnectionController.getInstance().requestProductList().get(i));
+        for(int i = 0; i < p.size(); i++){
+            productEntry(p.get(i));
         }
     }
 

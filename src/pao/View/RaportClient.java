@@ -19,7 +19,7 @@ public class RaportClient {
     String clientName = " ";
 
     RaportClient(ArrayList<Factura> l, String nameClient){
-        listaFacturi = l;
+        this.listaFacturi = l;
         this.clientName = nameClient;
         startWindow();
     }

@@ -73,44 +73,5 @@ public class RaportProdus {
         return salelist;
 
     }
-    /*
-    private JPanel saleEntry(Sale sale){
-        JPanel salePane = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
 
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.weightx = 0.3;
-        for(int i = 0 ; i < saleList; i++){
-            JLabel nameProduct = new JLabel(sale.getListaProduse().get(i).getName());
-            JLabel quantityProduct = new JLabel(String.valueOf(sale.getListaProduse().get(i).getQuantity()));
-            JLabel priceProduct = new JLabel(String.valueOf(sale.getListaProduse().get(i).getPrice()));
-            JLabel priceProductTotal = new JLabel(String.valueOf(sale.getListaProduse().get(i).getQuantity() * sale.getListaProduse().get(i).getPrice()));
-
-            salePane.add(nameProduct,gbc);
-            gbc.gridx++;
-            gbc.weightx = 0.2;
-            salePane.add(quantityProduct,gbc);
-            gbc.gridx++;
-            gbc.weightx = 0.2;
-            salePane.add(priceProduct,gbc);
-            gbc.gridx++;
-            gbc.weightx = 0.2;
-            salePane.add(priceProductTotal,gbc);
-            gbc.gridx = 0;
-            gbc.gridy++;
-
-        }
-        gbc.gridx = 3;
-        JLabel totalSale = new JLabel(String.valueOf(sale.getTotalSale()));
-        salePane.add(totalSale,gbc);
-
-        gbc.gridx = 2;
-        JLabel totalText = new JLabel("Total = ");
-        salePane.add(totalText,gbc);
-
-        return salePane;
-
-    }
-    */
 }

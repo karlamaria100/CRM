@@ -4,6 +4,8 @@ package pao.View;
  * Created by rares on 18-May-17.
  */
 
+import pao.Network.ConnectionController;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -71,7 +73,7 @@ public class ChangeProduct {
         productQuantityPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         JLabel productQuantity = new JLabel("Aaduga/Scade cu ");
-        JTextField productQuantityTextField = new JTextField(String.valueOf(stock));
+        JTextField productQuantityTextField = new JTextField();
         productQuantityTextField.setPreferredSize(new Dimension(200,24));
 
         productQuantityPane.add(productQuantity);
@@ -96,7 +98,9 @@ public class ChangeProduct {
         pricePane.add(productRON);
 
         form.add(nameProductPane);
-        form.add(productQuantityPane);
+        if(!ConnectionController.getInstance().requestProduct(nameProduct).isServices()) {
+            form.add(productQuantityPane);
+        }
         form.add(pricePane);
 
         productForm.add(form, BorderLayout.CENTER);
@@ -109,7 +113,12 @@ public class ChangeProduct {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println(id + " " + stock + " " + price);
-                control.modifyProduct(id, Double.parseDouble(productQuantityTextField.getText()), Double.parseDouble(productPriceTextField.getText()));
+                if(control.getProduct(nameProduct).isServices()){
+                    control.modifyProduct(id, 0.0, Double.parseDouble(productPriceTextField.getText()));
+                }
+                else {
+                    control.modifyProduct(id, Double.parseDouble(productQuantityTextField.getText()), Double.parseDouble(productPriceTextField.getText()));
+                }
                 jframe.dispose();
             }
         });
