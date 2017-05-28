@@ -1,5 +1,6 @@
-import View.Controller;
-import View.MainUI;
+package pao;
+
+import pao.View.Controller;
 
 /**
  * Created by rares on 31-Mar-17.
@@ -27,9 +28,7 @@ Cautare dupa diversi parametri (criterii complexe de cautare)
 
 public class Main {
 
-
     public static void main (String[] args) {
         Controller control = new Controller();
-
     }
 }

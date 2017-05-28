@@ -1,7 +1,8 @@
-package View;
+package pao.View;
 
-import Model.Client;
-import Model.Factura;
+import pao.Model.Client;
+import pao.Model.Factura;
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -53,7 +54,7 @@ public class FacturaView {
         clientNamePane.setBorder(new EmptyBorder(20, 20, 5, 0));
 
         JLabel nameClient = new JLabel("Numele Clientului:");
-        JLabel nameClientSet = new JLabel(c.getName());
+        JLabel nameClientSet = new JLabel(c.getFullName());
 
         clientNamePane.add(nameClient);
         clientNamePane.add(nameClientSet);
@@ -82,17 +83,19 @@ public class FacturaView {
                         String nameProductLocal = ((JTextField)((JPanel) component).getComponent(1)).getText();
                         String quantityProductLocal = ((JTextField)((JPanel) component).getComponent(3)).getText();
                         if(!nameProductLocal.isEmpty()) {
-                            System.out.println(quantityProductLocal);
+                            //System.out.println(quantityProductLocal);
                             double q = Double.parseDouble(quantityProductLocal);
                             JLabel p = (JLabel) ((JPanel) component).getComponent(4);
                             double priceProductLocal = Double.parseDouble(p.getText());
                             priceProductLocal = priceProductLocal / q;
-                            noua.add(nameProductLocal, q, priceProductLocal);
-                            c.addFactura(noua);
-                            jframe.dispose();
+                            noua.add(nameProductLocal, q, priceProductLocal, control.getProduct(nameProductLocal).getId(), control.getProduct(nameProductLocal).isServices());
+
                         }
                     }
                 }
+                ConnectionController.getInstance().sendFactura(noua, c.getId());
+                control.importClientsList();
+                jframe.dispose();
             }
         });
         JButton clearButton = new JButton("Clear");
@@ -199,9 +202,8 @@ public class FacturaView {
                             "Eroare validare",
                             JOptionPane.ERROR_MESSAGE);
                 }
-                if(control.getProduct(productNameTextField.getText()) == null) {
+                if(control.getProduct(productNameTextField.getText())== null) {
                     valid = false;
-                    //System.out.println(control.getProduct(productNameTextField.getText()).getName());
                     JOptionPane.showMessageDialog(jframe,
                             "Produsul nu exista in ofeta! \n Incercati altceva.",
                             "Eroare validare",
@@ -218,15 +220,18 @@ public class FacturaView {
                     }
                 }
                 if(valid) {
-                    JButton removeButton = new JButton("Sterge");
-                    product.add(removeButton);
+                    //JButton removeButton = new JButton("Sterge");
+                    //product.add(removeButton);
                     productNameTextField.setEditable(false);
                     productQuantityTextField.setEditable(false);
                     totalFactura.setText(String.valueOf(Double.parseDouble(totalFactura.getText()) + Double.parseDouble(productQuantityTextField.getText()) * control.getProduct(productNameTextField.getText()).getPrice()));
                     int p = Integer.parseInt(nrProductsLabel.getText());
                     p++;
                     nrProductsLabel.setText(String.valueOf(p));
+                    productFinalPrice.setText(String.valueOf(control.getProduct(productNameTextField.getText()).getPrice() * Double.parseDouble(productQuantityTextField.getText())));
+
                     product.revalidate();
+
                 }
             }
         });

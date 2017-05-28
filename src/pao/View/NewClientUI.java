@@ -1,11 +1,9 @@
-package View;
+package pao.View;
 
-import sun.applet.Main;
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -31,7 +29,6 @@ public class NewClientUI {
         jframe = new JFrame("Client Nou");
         jframe.setPreferredSize(new Dimension(400, 300));
         jframe.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-
 
         jframe.add(clientForm());
         jframe.pack();
@@ -104,21 +101,18 @@ public class NewClientUI {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(type == 2) {
+                if(type == 2 && !nameCompanyTextField.getText().equals("")) {
                     control.addCompany(nameCompanyTextField.getText());
                 }
                 else{
+                    if(!namePersonTextField.getText().equals("") && !surnamePersonTextField.getText().equals(""))
                     control.addCustomer(namePersonTextField.getText(), surnamePersonTextField.getText());
                 }
-                control.refreshClientList();
+                ConnectionController.getInstance().requestClientList();
                 jframe.dispose();
             }
         });
-        JButton clearButton = new JButton("Clear");
-
-        operationButtons.add(clearButton);
         operationButtons.add(saveButton);
-
         clientForm.add(operationButtons, BorderLayout.SOUTH);
 
         return clientForm;

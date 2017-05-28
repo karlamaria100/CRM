@@ -1,4 +1,10 @@
-package View;
+package pao.View;
+
+/**
+ * Created by rares on 18-May-17.
+ */
+
+import pao.Network.ConnectionController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -9,15 +15,23 @@ import java.awt.event.ActionListener;
 /**
  * Created by Rares on 4/1/2017.
  */
-public class ProductUI {
+public class ChangeProduct {
 
     private JFrame jframe;
     Controller control;
     MainUI mainUI;
 
-    ProductUI(Controller control, MainUI ui){
+    String nameProduct;
+    double stock;
+    double price;
+    int id;
+
+    ChangeProduct(Controller control, int id, String name, double stock, double price){
+        this.id = id;
+        this.nameProduct = name;
+        this.stock = stock;
+        this.price = price;
         this.control = control;
-        this.mainUI = ui;
         startWindow();
     }
 
@@ -36,7 +50,7 @@ public class ProductUI {
         JPanel productForm = new JPanel(new BorderLayout());
 
         //WINDOW TITLE
-        JLabel newProductText = new JLabel("Adaugati Produs Nou");
+        JLabel newProductText = new JLabel(nameProduct);
         newProductText.setBorder(new EmptyBorder(20, 20, 10, 20));
         productForm.add(newProductText, BorderLayout.NORTH);
 
@@ -52,25 +66,20 @@ public class ProductUI {
         nameProductPane.setLayout(experimentLayout);
         nameProductPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        JLabel nameProduct = new JLabel("Numele Produsului:");
-        JTextField nameProductTextField = new JTextField();
-        nameProductTextField.setPreferredSize(new Dimension(200, 24));
-
-        nameProductPane.add(nameProduct);
-        nameProductPane.add(nameProductTextField);
-
         //QUANTITY PANE
 
         JPanel productQuantityPane = new JPanel();
         productQuantityPane.setLayout(experimentLayout);
         productQuantityPane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        JLabel productQuantity = new JLabel("Cantitate:");
+        JLabel productQuantity = new JLabel("Aaduga/Scade cu ");
         JTextField productQuantityTextField = new JTextField();
         productQuantityTextField.setPreferredSize(new Dimension(200,24));
 
         productQuantityPane.add(productQuantity);
         productQuantityPane.add(productQuantityTextField);
+
+        productQuantityPane.add(new JLabel(" produse."));
 
 
         //PRICE PANE
@@ -80,7 +89,7 @@ public class ProductUI {
         pricePane.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         JLabel productPrice = new JLabel("Pret:");
-        JTextField productPriceTextField = new JTextField();
+        JTextField productPriceTextField = new JTextField(String.valueOf(price));
         productPriceTextField.setPreferredSize(new Dimension(100,24));
         JLabel productRON = new JLabel ("RON");
 
@@ -89,7 +98,9 @@ public class ProductUI {
         pricePane.add(productRON);
 
         form.add(nameProductPane);
-        form.add(productQuantityPane);
+        if(!ConnectionController.getInstance().requestProduct(nameProduct).isServices()) {
+            form.add(productQuantityPane);
+        }
         form.add(pricePane);
 
         productForm.add(form, BorderLayout.CENTER);
@@ -101,14 +112,17 @@ public class ProductUI {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                control.addProduct(nameProductTextField.getText(), productQuantityTextField.getText(), productPriceTextField.getText());
-                control.refreshProductList();
+                System.out.println(id + " " + stock + " " + price);
+                if(control.getProduct(nameProduct).isServices()){
+                    control.modifyProduct(id, 0.0, Double.parseDouble(productPriceTextField.getText()));
+                }
+                else {
+                    control.modifyProduct(id, Double.parseDouble(productQuantityTextField.getText()), Double.parseDouble(productPriceTextField.getText()));
+                }
                 jframe.dispose();
             }
         });
-        JButton clearButton = new JButton("Clear");
 
-        operationButtons.add(clearButton);
         operationButtons.add(saveButton);
 
         productForm.add(operationButtons, BorderLayout.SOUTH);
